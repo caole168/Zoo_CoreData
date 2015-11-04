@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Zoo_CoreData
+//  Zoo
 //
-//  Created by Ifeng on 15/11/4.
-//  Copyright © 2015年 pincher. All rights reserved.
+//  Created by Ifeng on 15/9/3.
+//  Copyright (c) 2015年 pincher. All rights reserved.
 //
 
 import UIKit
