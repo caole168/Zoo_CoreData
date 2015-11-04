@@ -22,6 +22,8 @@ class SyViewController: UITableViewController{
     var sendUrl:NSString!
     var sendTitle:NSString!
     var sendImage:NSString!
+    var sendSource:NSString!
+    
     
     //下拉刷新空间
     let pullRefreshControl = UIRefreshControl()
@@ -33,6 +35,21 @@ class SyViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let backButton = UIBarButtonItem()
+        backButton.image = UIImage(named: "")
+        backButton.title = ""
+        self.navigationItem.backBarButtonItem = backButton
+        
+        
+        let navTitle = UILabel()
+        navTitle.frame = CGRectMake(100, 00, 100, 44)
+        navTitle.textColor = UIColor(red: 224/250, green: 58/250, blue: 44/250, alpha: 1.0)
+        navTitle.font = UIFont(name: "GurmukhiMN-Bold", size: 23)
+        navTitle.text = "Zoo"
+        navTitle.textAlignment = NSTextAlignment.Center
+        self.navigationItem.titleView = navTitle
+
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -106,6 +123,7 @@ class SyViewController: UITableViewController{
         sendUrl = dataGroup["url"] as! NSString
         sendTitle = dataGroup["title"] as! NSString
         sendImage = dataGroup["image"] as! NSString
+        sendSource = dataGroup["source"] as! NSString
         
         tableView .deselectRowAtIndexPath(indexPath, animated: true)
     
@@ -128,9 +146,9 @@ class SyViewController: UITableViewController{
                     
                     let goDetailContent = segue.destinationViewController as! DetailViewController
                    
-                    goDetailContent.ReceiveUrl = sendUrl
-                    goDetailContent.ReceiveTitle = sendTitle
-                    goDetailContent.ReceiveImage = sendImage
+                    goDetailContent.receiveUrl = sendUrl
+                    goDetailContent.receiveTitle = sendTitle
+                    goDetailContent.receiveImage = sendImage
                     
 
                 }

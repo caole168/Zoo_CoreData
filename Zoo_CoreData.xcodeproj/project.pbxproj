@@ -19,7 +19,6 @@
 		5E168E751BE9AA2400A8502E /* SyCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */; };
 		5E168E761BE9AA2400A8502E /* SyPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E168E701BE9AA2400A8502E /* SyPlist.plist */; };
 		5E168E771BE9AA2400A8502E /* SyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E711BE9AA2400A8502E /* SyViewController.swift */; };
-		5E168E781BE9AA2400A8502E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E721BE9AA2400A8502E /* ViewController.swift */; };
 		5E168E7A1BE9AA8500A8502E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E791BE9AA8500A8502E /* CoreTelephony.framework */; };
 		5E168E7C1BE9AA9000A8502E /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E7B1BE9AA9000A8502E /* libc++.tbd */; };
 		5E168E7E1BE9AA9900A8502E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E7D1BE9AA9900A8502E /* libz.tbd */; };
@@ -28,8 +27,6 @@
 		5E168E841BE9AAB900A8502E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E831BE9AAB900A8502E /* Foundation.framework */; };
 		5E168E861BE9AAC100A8502E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E851BE9AAC100A8502E /* UIKit.framework */; };
 		5E168E881BE9AACC00A8502E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168E871BE9AACC00A8502E /* SystemConfiguration.framework */; };
-		5E168E981BE9B2C300A8502E /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E961BE9B2C300A8502E /* Entity+CoreDataProperties.swift */; };
-		5E168E991BE9B2C300A8502E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E971BE9B2C300A8502E /* Entity.swift */; };
 		5E168EB51BE9B37B00A8502E /* 0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E168E9B1BE9B37B00A8502E /* 0.jpeg */; };
 		5E168EB61BE9B37B00A8502E /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E168E9C1BE9B37B00A8502E /* 1.jpeg */; };
 		5E168EB71BE9B37B00A8502E /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E168E9D1BE9B37B00A8502E /* 2.jpeg */; };
@@ -57,6 +54,8 @@
 		5E168ECD1BE9B37B00A8502E /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 5E168EB31BE9B37B00A8502E /* iTunesArtwork */; };
 		5E168ECE1BE9B37B00A8502E /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 5E168EB41BE9B37B00A8502E /* iTunesArtwork@2x */; };
 		5E168ED01BE9CB4B00A8502E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */; };
+		5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */; };
+		5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDC1BE9F23700A8502E /* Entity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +94,6 @@
 		5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyCellClass.swift; sourceTree = "<group>"; };
 		5E168E701BE9AA2400A8502E /* SyPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SyPlist.plist; sourceTree = "<group>"; };
 		5E168E711BE9AA2400A8502E /* SyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyViewController.swift; sourceTree = "<group>"; };
-		5E168E721BE9AA2400A8502E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E168E791BE9AA8500A8502E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		5E168E7B1BE9AA9000A8502E /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		5E168E7D1BE9AA9900A8502E /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -105,8 +103,6 @@
 		5E168E851BE9AAC100A8502E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5E168E871BE9AACC00A8502E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5E168E951BE9B27600A8502E /* WeChatBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeChatBridge.h; sourceTree = "<group>"; };
-		5E168E961BE9B2C300A8502E /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entity+CoreDataProperties.swift"; path = "../Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		5E168E971BE9B2C300A8502E /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = ../Entity.swift; sourceTree = "<group>"; };
 		5E168E9B1BE9B37B00A8502E /* 0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 0.jpeg; path = image/0.jpeg; sourceTree = "<group>"; };
 		5E168E9C1BE9B37B00A8502E /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpeg; path = image/1.jpeg; sourceTree = "<group>"; };
 		5E168E9D1BE9B37B00A8502E /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 2.jpeg; path = image/2.jpeg; sourceTree = "<group>"; };
@@ -136,6 +132,8 @@
 		5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		5E168ED11BE9CB5200A8502E /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		5E168ED21BE9CB5200A8502E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entity+CoreDataProperties.swift"; path = "../Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5E168EDC1BE9F23700A8502E /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = ../Entity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,18 +205,14 @@
 			children = (
 				5E168E381BE9A69A00A8502E /* AppDelegate.swift */,
 				5E168E6B1BE9A97500A8502E /* Main.storyboard */,
-				5E168E6D1BE9AA2400A8502E /* DetailViewController.swift */,
-				5E168E6E1BE9AA2400A8502E /* ShareViewController.swift */,
-				5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */,
-				5E168E701BE9AA2400A8502E /* SyPlist.plist */,
 				5E168E711BE9AA2400A8502E /* SyViewController.swift */,
-				5E168E721BE9AA2400A8502E /* ViewController.swift */,
-				5E168E421BE9A69A00A8502E /* Assets.xcassets */,
+				5E168E6D1BE9AA2400A8502E /* DetailViewController.swift */,
 				5E168E441BE9A69A00A8502E /* LaunchScreen.storyboard */,
 				5E168E471BE9A69A00A8502E /* Info.plist */,
-				5E168E3F1BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld */,
-				5E168E961BE9B2C300A8502E /* Entity+CoreDataProperties.swift */,
-				5E168E971BE9B2C300A8502E /* Entity.swift */,
+				5E168E701BE9AA2400A8502E /* SyPlist.plist */,
+				5E168E421BE9A69A00A8502E /* Assets.xcassets */,
+				5E168ED41BE9CCB600A8502E /* CoreData */,
+				5E168ED31BE9CCAB00A8502E /* class */,
 				5E168E9A1BE9B36600A8502E /* image */,
 			);
 			path = Zoo_CoreData;
@@ -283,6 +277,25 @@
 				5E168EB41BE9B37B00A8502E /* iTunesArtwork@2x */,
 			);
 			name = image;
+			sourceTree = "<group>";
+		};
+		5E168ED31BE9CCAB00A8502E /* class */ = {
+			isa = PBXGroup;
+			children = (
+				5E168E6E1BE9AA2400A8502E /* ShareViewController.swift */,
+				5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */,
+			);
+			name = class;
+			sourceTree = "<group>";
+		};
+		5E168ED41BE9CCB600A8502E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5E168E3F1BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld */,
+				5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */,
+				5E168EDC1BE9F23700A8502E /* Entity.swift */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +366,7 @@
 				TargetAttributes = {
 					5E168E341BE9A69A00A8502E = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = XWP5J634VP;
 					};
 					5E168E4B1BE9A69B00A8502E = {
 						CreatedOnToolsVersion = 7.1;
@@ -445,11 +459,10 @@
 			files = (
 				5E168E731BE9AA2400A8502E /* DetailViewController.swift in Sources */,
 				5E168E411BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld in Sources */,
-				5E168E981BE9B2C300A8502E /* Entity+CoreDataProperties.swift in Sources */,
 				5E168E741BE9AA2400A8502E /* ShareViewController.swift in Sources */,
+				5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */,
+				5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */,
 				5E168E391BE9A69A00A8502E /* AppDelegate.swift in Sources */,
-				5E168E991BE9B2C300A8502E /* Entity.swift in Sources */,
-				5E168E781BE9AA2400A8502E /* ViewController.swift in Sources */,
 				5E168E771BE9AA2400A8502E /* SyViewController.swift in Sources */,
 				5E168E751BE9AA2400A8502E /* SyCellClass.swift in Sources */,
 			);

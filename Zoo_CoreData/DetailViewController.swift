@@ -14,12 +14,14 @@ import CoreData
 class DetailViewController: UIViewController,UIWebViewDelegate {
 
     
-    var ReceiveUrl:NSString!
-    var ReceiveTitle:NSString!
-    var ReceiveImage:NSString!
-    var LoadUrl:NSString!
-    var PageTitle:NSString!
-    let Screen = UIScreen.mainScreen().bounds
+    var receiveUrl:NSString!
+    var receiveTitle:NSString!
+    var receiveImage:NSString!
+    var receiveSource:NSString!
+    
+    var loadUrl:NSString!
+    var pageTitle:NSString!
+    let screen = UIScreen.mainScreen().bounds
     var loadImage = UIActivityIndicatorView()
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
  //   let coredataHelper = CoreDataHelper()
@@ -33,17 +35,24 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
         
         let ShareToWxAction = UIAlertAction(title: "微信好友", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-            sendText(0 , ShareTitle:self.ReceiveTitle , ShareUrl:self.ReceiveUrl)
+            sendText(0 , ShareTitle:self.receiveTitle , ShareUrl:self.receiveUrl)
         }
         
         let ShareToConmentsAction = UIAlertAction(title: "微信朋友圈", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
-            sendText(1 , ShareTitle:self.ReceiveTitle , ShareUrl:self.ReceiveUrl)
+            sendText(1 , ShareTitle:self.receiveTitle , ShareUrl:self.receiveUrl)
+        }
+        
+        let copyToPasteBoard = UIAlertAction(title: "复制连接", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in
+            
+            let pasteBoard = UIPasteboard.generalPasteboard()
+            pasteBoard.string = self.receiveUrl as String!//复制到剪切板
         }
         
         
         ShareController.addAction(ShareToWxAction)
         ShareController.addAction(ShareToConmentsAction)
         ShareController.addAction(cancelAction)
+        ShareController.addAction(copyToPasteBoard)
         
         presentViewController(ShareController, animated: true, completion: nil)
         
@@ -51,42 +60,28 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     }
     
     
-    @IBAction func collectionButton(sender: AnyObject) {
-        
-        
+    
+    @IBAction func likeButton(sender: AnyObject) {
         
         let context = appDel.managedObjectContext
-        let favorite = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
-            
-        favorite.title = "aaaaaaa"
+        let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
+        
+//        like.title = receiveTitle as String!
+//        like.image = receiveImage as String!
+//        like.url = receiveUrl as String!
+//        like.source = receiveSource as String!
+        
+        like.title = "aaaaa"
+        like.image = "bbbbb"
+        like.url = "cccccc"
+        like.source = "dddddd"
         appDel.saveContext()
-            
-        }
         
         
-//        var context = appDel.managedObjectContext //获取存储的上下文
-//        
-//        let favorite = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
-//
-////
-////        favorite.title = ReceiveTitle as String
-////        favorite.url = ReceiveUrl as String
-////        favorite.image = ReceiveImage as String
-////        
-//
-//        favorite.title = "qweqw"
-//        favorite.url = "q12e"
-//        favorite.image = "1233"
-//        
-//        do{
-//            try context.save()
-//        }catch {
-//            print("12")
-//            
-//        }
-        
+    }
     
     
+  
 
     
 
@@ -96,17 +91,20 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
     
         
-        self.navigationItem.title = "\(ReceiveTitle)"
-      //  self.navigationItem.
+  //      self.navigationItem.title = "\(ReceiveTitle)"
+   
 
-        let ScreenWidth = Screen.width
-        let ScreenHeight = Screen.height
+        let ScreenWidth = screen.width
+        let ScreenHeight = screen.height
         
-        LoadUrl = ReceiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        
+
+        
+        loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         WebView.frame = CGRectMake(0, 20, ScreenWidth, ScreenHeight)
         WebView.reload()
         WebView.reloadInputViews()
-        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(LoadUrl)")! ) )
+        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )
         WebView.delegate = self
   
         

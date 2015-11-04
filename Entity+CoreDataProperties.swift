@@ -15,5 +15,10 @@ import CoreData
 extension Entity {
 
     @NSManaged var title: String?
+    @NSManaged var image: String?
+    @NSManaged var url: String?
+    @NSManaged var source: String?
+    @NSManaged var time: String?
+    @NSManaged var id: String?
 
 }
