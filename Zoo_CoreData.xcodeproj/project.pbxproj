@@ -56,6 +56,9 @@
 		5E168ED01BE9CB4B00A8502E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */; };
 		5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */; };
 		5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDC1BE9F23700A8502E /* Entity.swift */; };
+		5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECBF14B1BEAECCB00A8EFEA /* setting.plist */; };
+		5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */; };
+		5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +79,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5E168E351BE9A69A00A8502E /* Zoo_CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoo_CoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E168E351BE9A69A00A8502E /* Zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E168E381BE9A69A00A8502E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E168E401BE9A69A00A8502E /* Zoo_CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zoo_CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5E168E421BE9A69A00A8502E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +137,9 @@
 		5E168ED21BE9CB5200A8502E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entity+CoreDataProperties.swift"; path = "../Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E168EDC1BE9F23700A8502E /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = ../Entity.swift; sourceTree = "<group>"; };
+		5ECBF14B1BEAECCB00A8EFEA /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
+		5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCellClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +199,7 @@
 		5E168E361BE9A69A00A8502E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5E168E351BE9A69A00A8502E /* Zoo_CoreData.app */,
+				5E168E351BE9A69A00A8502E /* Zoo.app */,
 				5E168E4C1BE9A69B00A8502E /* Zoo_CoreDataTests.xctest */,
 				5E168E571BE9A69B00A8502E /* Zoo_CoreDataUITests.xctest */,
 			);
@@ -208,9 +214,9 @@
 				5E168E711BE9AA2400A8502E /* SyViewController.swift */,
 				5E168E6D1BE9AA2400A8502E /* DetailViewController.swift */,
 				5E168E441BE9A69A00A8502E /* LaunchScreen.storyboard */,
-				5E168E471BE9A69A00A8502E /* Info.plist */,
-				5E168E701BE9AA2400A8502E /* SyPlist.plist */,
+				5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */,
 				5E168E421BE9A69A00A8502E /* Assets.xcassets */,
+				5ECBF14A1BEAEC5400A8EFEA /* support */,
 				5E168ED41BE9CCB600A8502E /* CoreData */,
 				5E168ED31BE9CCAB00A8502E /* class */,
 				5E168E9A1BE9B36600A8502E /* image */,
@@ -284,6 +290,7 @@
 			children = (
 				5E168E6E1BE9AA2400A8502E /* ShareViewController.swift */,
 				5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */,
+				5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -296,6 +303,16 @@
 				5E168EDC1BE9F23700A8502E /* Entity.swift */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		5ECBF14A1BEAEC5400A8EFEA /* support */ = {
+			isa = PBXGroup;
+			children = (
+				5E168E471BE9A69A00A8502E /* Info.plist */,
+				5E168E701BE9AA2400A8502E /* SyPlist.plist */,
+				5ECBF14B1BEAECCB00A8EFEA /* setting.plist */,
+			);
+			name = support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +332,7 @@
 			);
 			name = Zoo_CoreData;
 			productName = Zoo_CoreData;
-			productReference = 5E168E351BE9A69A00A8502E /* Zoo_CoreData.app */;
+			productReference = 5E168E351BE9A69A00A8502E /* Zoo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5E168E4B1BE9A69B00A8502E /* Zoo_CoreDataTests */ = {
@@ -407,6 +424,7 @@
 				5E168ECB1BE9B37B00A8502E /* Icon.png in Resources */,
 				5E168EC31BE9B37B00A8502E /* Icon-Small-50.png in Resources */,
 				5E168ECA1BE9B37B00A8502E /* Icon-Spotlight-40@3x.png in Resources */,
+				5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */,
 				5E168EBA1BE9B37B00A8502E /* 屏幕尺寸 in Resources */,
 				5E168EC41BE9B37B00A8502E /* Icon-Small-50@2x.png in Resources */,
 				5E168EC01BE9B37B00A8502E /* Icon-76.png in Resources */,
@@ -460,8 +478,10 @@
 				5E168E731BE9AA2400A8502E /* DetailViewController.swift in Sources */,
 				5E168E411BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld in Sources */,
 				5E168E741BE9AA2400A8502E /* ShareViewController.swift in Sources */,
+				5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */,
 				5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */,
 				5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */,
+				5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */,
 				5E168E391BE9A69A00A8502E /* AppDelegate.swift in Sources */,
 				5E168E771BE9AA2400A8502E /* SyViewController.swift in Sources */,
 				5E168E751BE9AA2400A8502E /* SyCellClass.swift in Sources */,
@@ -608,7 +628,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;
 			};
 			name = Debug;
@@ -628,7 +648,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;
 			};
 			name = Release;
@@ -700,6 +720,7 @@
 				5E168E621BE9A69B00A8502E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E168E631BE9A69B00A8502E /* Build configuration list for PBXNativeTarget "Zoo_CoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +729,7 @@
 				5E168E651BE9A69B00A8502E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E168E661BE9A69B00A8502E /* Build configuration list for PBXNativeTarget "Zoo_CoreDataUITests" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +738,7 @@
 				5E168E681BE9A69B00A8502E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

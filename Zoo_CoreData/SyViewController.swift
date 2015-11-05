@@ -29,12 +29,12 @@ class SyViewController: UITableViewController{
     let pullRefreshControl = UIRefreshControl()
     //var plist
     
-    var _dataSource:[String] = []
+
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
