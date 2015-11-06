@@ -66,7 +66,7 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         
         
-        tableView.rowHeight = 80
+        tableView.rowHeight = 60
         
         
         let dataRow = indexPath.row + 1 //数组元素从1开始的，所以+1 ，indexPath默认为0
@@ -101,7 +101,19 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
      func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         
+        let likeVc = LikeViewController()
         
+        switch(indexPath.row){
+        case 0:
+            self.navigationController?.pushViewController(likeVc, animated: true);
+        case 1:
+            self.navigationController?.pushViewController(likeVc, animated: true);
+            
+            
+        default:
+            break;
+            
+        }
        
   //      let dataGroup = data["\(dataRow)"] as! NSDictionary
         

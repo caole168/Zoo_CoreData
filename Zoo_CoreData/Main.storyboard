@@ -86,15 +86,15 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saI-7M-b6N">
-                                                    <rect key="frame" x="28" y="61" width="26" height="26"/>
+                                                    <rect key="frame" x="28" y="62" width="26" height="26"/>
                                                     <animations/>
                                                 </imageView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="saI-7M-b6N" firstAttribute="leading" secondItem="ZzW-Mm-xHS" secondAttribute="leadingMargin" constant="20" id="1w9-T2-gDq"/>
-                                                <constraint firstItem="Czy-Jz-xAx" firstAttribute="top" secondItem="ZzW-Mm-xHS" secondAttribute="topMargin" constant="26" id="k8K-h4-gVa"/>
-                                                <constraint firstItem="saI-7M-b6N" firstAttribute="top" secondItem="ZzW-Mm-xHS" secondAttribute="topMargin" constant="21" id="lXv-aS-n48"/>
+                                                <constraint firstItem="saI-7M-b6N" firstAttribute="leading" secondItem="ZzW-Mm-xHS" secondAttribute="leadingMargin" constant="16" id="1w9-T2-gDq"/>
+                                                <constraint firstItem="Czy-Jz-xAx" firstAttribute="top" secondItem="ZzW-Mm-xHS" secondAttribute="topMargin" constant="13" id="k8K-h4-gVa"/>
+                                                <constraint firstItem="saI-7M-b6N" firstAttribute="top" secondItem="ZzW-Mm-xHS" secondAttribute="topMargin" constant="12" id="lXv-aS-n48"/>
                                                 <constraint firstItem="Czy-Jz-xAx" firstAttribute="leading" secondItem="saI-7M-b6N" secondAttribute="trailing" constant="20" id="mDF-4L-8ch"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -233,7 +233,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lR6-ra-bBX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-40" y="149"/>
+            <point key="canvasLocation" x="-30" y="218"/>
         </scene>
     </scenes>
     <resources>

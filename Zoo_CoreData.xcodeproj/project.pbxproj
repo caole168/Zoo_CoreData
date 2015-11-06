@@ -59,6 +59,8 @@
 		5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECBF14B1BEAECCB00A8EFEA /* setting.plist */; };
 		5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */; };
 		5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */; };
+		5ECBF1541BEC406400A8EFEA /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */; };
+		5ECBF1561BEC7C1800A8EFEA /* LikeCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,8 @@
 		5ECBF14B1BEAECCB00A8EFEA /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
 		5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCellClass.swift; sourceTree = "<group>"; };
+		5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
+		5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCellClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +219,7 @@
 				5E168E6D1BE9AA2400A8502E /* DetailViewController.swift */,
 				5E168E441BE9A69A00A8502E /* LaunchScreen.storyboard */,
 				5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */,
+				5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */,
 				5E168E421BE9A69A00A8502E /* Assets.xcassets */,
 				5ECBF14A1BEAEC5400A8EFEA /* support */,
 				5E168ED41BE9CCB600A8502E /* CoreData */,
@@ -291,6 +296,7 @@
 				5E168E6E1BE9AA2400A8502E /* ShareViewController.swift */,
 				5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */,
 				5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */,
+				5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E168E731BE9AA2400A8502E /* DetailViewController.swift in Sources */,
+				5ECBF1561BEC7C1800A8EFEA /* LikeCellClass.swift in Sources */,
 				5E168E411BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld in Sources */,
 				5E168E741BE9AA2400A8502E /* ShareViewController.swift in Sources */,
 				5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */,
@@ -484,6 +491,7 @@
 				5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */,
 				5E168E391BE9A69A00A8502E /* AppDelegate.swift in Sources */,
 				5E168E771BE9AA2400A8502E /* SyViewController.swift in Sources */,
+				5ECBF1541BEC406400A8EFEA /* LikeViewController.swift in Sources */,
 				5E168E751BE9AA2400A8502E /* SyCellClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
