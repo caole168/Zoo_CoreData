@@ -89,7 +89,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        self.view.backgroundColor = UIColor.whiteColor()
         
   //      self.navigationItem.title = "\(ReceiveTitle)"
    
@@ -101,7 +101,6 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
 
         
         loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        WebView.frame = CGRectMake(0, 20, ScreenWidth, ScreenHeight)
         WebView.reload()
         WebView.reloadInputViews()
         WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )

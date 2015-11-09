@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5E168E341BE9A69A00A8502E"
-               BuildableName = "Zoo_CoreData.app"
+               BuildableName = "Zoo.app"
                BlueprintName = "Zoo_CoreData"
                ReferencedContainer = "container:Zoo_CoreData.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5E168E341BE9A69A00A8502E"
-            BuildableName = "Zoo_CoreData.app"
+            BuildableName = "Zoo.app"
             BlueprintName = "Zoo_CoreData"
             ReferencedContainer = "container:Zoo_CoreData.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5E168E341BE9A69A00A8502E"
-            BuildableName = "Zoo_CoreData.app"
+            BuildableName = "Zoo.app"
             BlueprintName = "Zoo_CoreData"
             ReferencedContainer = "container:Zoo_CoreData.xcodeproj">
          </BuildableReference>
@@ -105,7 +105,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5E168E341BE9A69A00A8502E"
-            BuildableName = "Zoo_CoreData.app"
+            BuildableName = "Zoo.app"
             BlueprintName = "Zoo_CoreData"
             ReferencedContainer = "container:Zoo_CoreData.xcodeproj">
          </BuildableReference>

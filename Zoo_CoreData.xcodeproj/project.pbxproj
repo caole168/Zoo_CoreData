@@ -56,6 +56,11 @@
 		5E168ED01BE9CB4B00A8502E /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */; };
 		5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */; };
 		5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168EDC1BE9F23700A8502E /* Entity.swift */; };
+		5E3DEBA71BF0823900E4724E /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA21BF0823900E4724E /* 6.jpg */; };
+		5E3DEBA81BF0823900E4724E /* 7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA31BF0823900E4724E /* 7.jpeg */; };
+		5E3DEBA91BF0823900E4724E /* 8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA41BF0823900E4724E /* 8.jpeg */; };
+		5E3DEBAA1BF0823900E4724E /* 9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA51BF0823900E4724E /* 9.jpeg */; };
+		5E3DEBAB1BF0823900E4724E /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA61BF0823900E4724E /* 10.jpeg */; };
 		5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECBF14B1BEAECCB00A8EFEA /* setting.plist */; };
 		5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */; };
 		5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */; };
@@ -139,6 +144,11 @@
 		5E168ED21BE9CB5200A8502E /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		5E168EDB1BE9F23700A8502E /* Entity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Entity+CoreDataProperties.swift"; path = "../Entity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5E168EDC1BE9F23700A8502E /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = ../Entity.swift; sourceTree = "<group>"; };
+		5E3DEBA21BF0823900E4724E /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 6.jpg; path = image/6.jpg; sourceTree = "<group>"; };
+		5E3DEBA31BF0823900E4724E /* 7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 7.jpeg; path = image/7.jpeg; sourceTree = "<group>"; };
+		5E3DEBA41BF0823900E4724E /* 8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpeg; path = image/8.jpeg; sourceTree = "<group>"; };
+		5E3DEBA51BF0823900E4724E /* 9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9.jpeg; path = image/9.jpeg; sourceTree = "<group>"; };
+		5E3DEBA61BF0823900E4724E /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 10.jpeg; path = image/10.jpeg; sourceTree = "<group>"; };
 		5ECBF14B1BEAECCB00A8EFEA /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
 		5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCellClass.swift; sourceTree = "<group>"; };
@@ -265,6 +275,11 @@
 				5E168E9D1BE9B37B00A8502E /* 2.jpeg */,
 				5E168E9E1BE9B37B00A8502E /* 3.jpeg */,
 				5E168E9F1BE9B37B00A8502E /* 4.jpeg */,
+				5E3DEBA21BF0823900E4724E /* 6.jpg */,
+				5E3DEBA31BF0823900E4724E /* 7.jpeg */,
+				5E3DEBA41BF0823900E4724E /* 8.jpeg */,
+				5E3DEBA51BF0823900E4724E /* 9.jpeg */,
+				5E3DEBA61BF0823900E4724E /* 10.jpeg */,
 				5E168EA01BE9B37B00A8502E /* 屏幕尺寸 */,
 				5E168EA11BE9B37B00A8502E /* Icon-60.png */,
 				5E168EA21BE9B37B00A8502E /* Icon-60@2x.png */,
@@ -436,13 +451,18 @@
 				5E168EC01BE9B37B00A8502E /* Icon-76.png in Resources */,
 				5E168EB51BE9B37B00A8502E /* 0.jpeg in Resources */,
 				5E168EBF1BE9B37B00A8502E /* Icon-72@2x.png in Resources */,
+				5E3DEBA71BF0823900E4724E /* 6.jpg in Resources */,
 				5E168EB61BE9B37B00A8502E /* 1.jpeg in Resources */,
+				5E3DEBAB1BF0823900E4724E /* 10.jpeg in Resources */,
 				5E168ECC1BE9B37B00A8502E /* Icon@2x.png in Resources */,
 				5E168E461BE9A69A00A8502E /* LaunchScreen.storyboard in Resources */,
+				5E3DEBA91BF0823900E4724E /* 8.jpeg in Resources */,
 				5E168EC51BE9B37B00A8502E /* Icon-Small.png in Resources */,
 				5E168EC11BE9B37B00A8502E /* Icon-76@2x.png in Resources */,
+				5E3DEBA81BF0823900E4724E /* 7.jpeg in Resources */,
 				5E168EBB1BE9B37B00A8502E /* Icon-60.png in Resources */,
 				5E168ECD1BE9B37B00A8502E /* iTunesArtwork in Resources */,
+				5E3DEBAA1BF0823900E4724E /* 9.jpeg in Resources */,
 				5E168EBE1BE9B37B00A8502E /* Icon-72.png in Resources */,
 				5E168E6C1BE9A97500A8502E /* Main.storyboard in Resources */,
 				5E168E761BE9AA2400A8502E /* SyPlist.plist in Resources */,
