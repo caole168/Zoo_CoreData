@@ -12,9 +12,6 @@ import UIKit
 class LikeTableViewCell: UITableViewCell {
 
 
-
-    
-    
     //屏幕尺寸
     let Screen = UIScreen.mainScreen().bounds
     
@@ -27,15 +24,12 @@ class LikeTableViewCell: UITableViewCell {
     
     
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: UITableViewCellStyle.Default, reuseIdentifier: "likeCell")
         
-        // Initialization code
         
         let ScreenWidth = Screen.width
-        
-        
+
         
         syContentTitle.numberOfLines = 2
         syContentTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -75,7 +69,6 @@ class LikeTableViewCell: UITableViewCell {
             
             syContentTime.font      = UIFont(name: "Arial", size: 11)
             syContentTime.textColor = UIColor.grayColor()
-            
         }
         
         
@@ -94,9 +87,22 @@ class LikeTableViewCell: UITableViewCell {
         self.addSubview(syContentSource)
         
         
+    
+    
+    }
+    
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        // Initialization code
+        
+    }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

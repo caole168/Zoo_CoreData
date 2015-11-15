@@ -61,6 +61,7 @@
 		5E3DEBA91BF0823900E4724E /* 8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA41BF0823900E4724E /* 8.jpeg */; };
 		5E3DEBAA1BF0823900E4724E /* 9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA51BF0823900E4724E /* 9.jpeg */; };
 		5E3DEBAB1BF0823900E4724E /* 10.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5E3DEBA61BF0823900E4724E /* 10.jpeg */; };
+		5EBF64881BF486870023BE73 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF64871BF486870023BE73 /* CoreDataViewController.swift */; };
 		5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECBF14B1BEAECCB00A8EFEA /* setting.plist */; };
 		5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */; };
 		5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */; };
@@ -149,6 +150,7 @@
 		5E3DEBA41BF0823900E4724E /* 8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 8.jpeg; path = image/8.jpeg; sourceTree = "<group>"; };
 		5E3DEBA51BF0823900E4724E /* 9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9.jpeg; path = image/9.jpeg; sourceTree = "<group>"; };
 		5E3DEBA61BF0823900E4724E /* 10.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 10.jpeg; path = image/10.jpeg; sourceTree = "<group>"; };
+		5EBF64871BF486870023BE73 /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		5ECBF14B1BEAECCB00A8EFEA /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
 		5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCellClass.swift; sourceTree = "<group>"; };
@@ -227,10 +229,10 @@
 				5E168E6B1BE9A97500A8502E /* Main.storyboard */,
 				5E168E711BE9AA2400A8502E /* SyViewController.swift */,
 				5E168E6D1BE9AA2400A8502E /* DetailViewController.swift */,
-				5E168E441BE9A69A00A8502E /* LaunchScreen.storyboard */,
 				5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */,
 				5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */,
 				5E168E421BE9A69A00A8502E /* Assets.xcassets */,
+				5E168E441BE9A69A00A8502E /* LaunchScreen.storyboard */,
 				5ECBF14A1BEAEC5400A8EFEA /* support */,
 				5E168ED41BE9CCB600A8502E /* CoreData */,
 				5E168ED31BE9CCAB00A8502E /* class */,
@@ -308,10 +310,11 @@
 		5E168ED31BE9CCAB00A8502E /* class */ = {
 			isa = PBXGroup;
 			children = (
+				5EBF64871BF486870023BE73 /* CoreDataViewController.swift */,
 				5E168E6E1BE9AA2400A8502E /* ShareViewController.swift */,
 				5E168E6F1BE9AA2400A8502E /* SyCellClass.swift */,
-				5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */,
 				5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */,
+				5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E168E731BE9AA2400A8502E /* DetailViewController.swift in Sources */,
+				5EBF64881BF486870023BE73 /* CoreDataViewController.swift in Sources */,
 				5ECBF1561BEC7C1800A8EFEA /* LikeCellClass.swift in Sources */,
 				5E168E411BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld in Sources */,
 				5E168E741BE9AA2400A8502E /* ShareViewController.swift in Sources */,

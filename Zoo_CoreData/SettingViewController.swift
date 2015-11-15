@@ -77,15 +77,6 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         tableCell.settingTitle.text = dataGroup["title"] as? String
         tableCell.settingImage.image = UIImage(named:"\(ImageUrl)")
 
-        
-        //加载数据
-      
-        
- //       let ImageUrl = dataGroup["image"] as? NSString
-
-        
-  //      tableCell.settingTitle.text = data["title"] as? String
-  //      tableCell.settingImage.image = UIImage(named:"\(ImageUrl)")
 
         
         
@@ -113,8 +104,12 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         default:
             break;
             
+            
         }
        
+        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+        
+
   //      let dataGroup = data["\(dataRow)"] as! NSDictionary
         
 //        tableView .deselectRowAtIndexPath(indexPath, animated: true)

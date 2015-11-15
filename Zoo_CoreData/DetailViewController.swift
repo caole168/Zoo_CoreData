@@ -13,7 +13,7 @@ import CoreData
 
 class DetailViewController: UIViewController,UIWebViewDelegate {
 
-    
+//首页传值
     var receiveUrl:NSString!
     var receiveTitle:NSString!
     var receiveImage:NSString!
@@ -23,8 +23,10 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     var pageTitle:NSString!
     let screen = UIScreen.mainScreen().bounds
     var loadImage = UIActivityIndicatorView()
+    
+    //获取管理的数据上下文 对象
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
- //   let coredataHelper = CoreDataHelper()
+
     
     @IBOutlet weak var WebView: UIWebView!
     
@@ -65,16 +67,13 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
         let context = appDel.managedObjectContext
         let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
+        //插入数据
+
         
-//        like.title = receiveTitle as String!
-//        like.image = receiveImage as String!
-//        like.url = receiveUrl as String!
-//        like.source = receiveSource as String!
-        
-        like.title = "aaaaa"
-        like.image = "bbbbb"
-        like.url = "cccccc"
-        like.source = "dddddd"
+        like.title = receiveTitle as String
+        like.image = receiveImage as String
+        like.url = receiveUrl as String
+        like.source = receiveSource as String
         appDel.saveContext()
         
         
@@ -93,11 +92,6 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
   //      self.navigationItem.title = "\(ReceiveTitle)"
    
-
-        let ScreenWidth = screen.width
-        let ScreenHeight = screen.height
-        
-        
 
         
         loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
@@ -147,15 +141,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
     }
 
-    
-//    
-//    @IBAction func ShareWeChat(sender: AnyObject) {
-//        let app = UIApplication.sharedApplication().delegate as! AppDelegate
-//        app.sendText()
-//
-//        
-//    }
-//
+  //
     /*
     // MARK: - Navigation
 

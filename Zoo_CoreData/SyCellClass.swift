@@ -23,10 +23,9 @@ class SyTableViewCell: UITableViewCell {
     let syContentSource = UILabel()
     
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        // Initialization code
         
         let ScreenWidth = Screen.width
         
@@ -69,7 +68,7 @@ class SyTableViewCell: UITableViewCell {
             syContentTime.font      = UIFont(name: "Arial", size: 11)
             syContentTime.textColor = UIColor.grayColor()
             
-                  }
+        }
         
         
         
@@ -95,7 +94,6 @@ class SyTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-        
         
         
         

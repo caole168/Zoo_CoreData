@@ -93,6 +93,7 @@ class SyViewController: UITableViewController{
         tableView.rowHeight = 99
         
     //    tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
         //加载数据
         let dataRow = indexPath.row + 1 //数组元素从1开始的，所以+1 ，indexPath默认为0
         let dataGroup = data["\(dataRow)"] as! NSDictionary
@@ -105,7 +106,6 @@ class SyViewController: UITableViewController{
         tableCell.syContentTime.text = dataGroup["time"] as? String
         tableCell.syContentSource.text = dataGroup["source"] as? String
 
- 
         return tableCell
         
     }
@@ -149,7 +149,7 @@ class SyViewController: UITableViewController{
                     goDetailContent.receiveUrl = sendUrl
                     goDetailContent.receiveTitle = sendTitle
                     goDetailContent.receiveImage = sendImage
-                    
+                    goDetailContent.receiveSource = sendSource
 
                 }
     

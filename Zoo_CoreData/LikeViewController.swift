@@ -7,30 +7,69 @@
 //
 
 import UIKit
+import CoreData
 
-class LikeViewController: UITableViewController {
+class LikeViewController: UITableViewController,NSFetchedResultsControllerDelegate{
     
     
-    var plistData:NSString = ""
-    var data:NSMutableDictionary = NSMutableDictionary()
+    
+    //获取管理的数据上下文 对象
+    let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
+
+    var dataArray:Array<AnyObject> = []
+    var context:NSManagedObjectContext!
+
+    //屏幕尺寸
+    let Screen = UIScreen.mainScreen().bounds
 
     
+    //刷新列表数据
+    func refreshData() {
+        
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
+        
+        do{
+            dataArray = try context.executeFetchRequest(fetchRequest)
+            print(dataArray)
+            
+        }catch{
+            print("error")
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
+        
+        context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+        refreshData()
+
         tableView.registerClass(LikeTableViewCell.self, forCellReuseIdentifier: "likeCell")
-        
         self.navigationItem.title = "我的收藏"
-        
-        //  -----------读取plist文件----------------
-        plistData = NSBundle.mainBundle().pathForResource("SyPlist", ofType: "plist")!
-        data = NSMutableDictionary(contentsOfFile: plistData as String)!
-        
+
+        if dataArray.count == 0{
+            tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            
+        let noSign = UILabel()
+            noSign.text = "您还没有收藏文章"
+            noSign.frame = CGRectMake(Screen.width/3, Screen.height/3, 260, 100)
+            print(noSign.frame)
+            noSign.font = UIFont(name: "", size: 18)
+            noSign.textColor = UIColor.grayColor()
+            self.view.addSubview(noSign)
+            
+        }
         
     }
+        
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,52 +93,30 @@ class LikeViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        
-        return data.count
+    
+        return dataArray.count
+
         
     }
-    
-//    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 20;
-//    }
-//    
-    
-//    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat{
-//        return 0;
-//    }
+
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        tableView.rowHeight = 99
+        tableView.rowHeight = 100
+    
+        let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         
-        let id : String = "likeCell"
-        //let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier(id, forIndexPath: indexPath) as! LikeTableViewCell
-        
-        let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier(id, forIndexPath: indexPath) as! LikeTableViewCell
-        
-//        let c = UILabel()
-//        c.frame = CGRectMake(10, 10, 100, 100)
-//        c.text = "zenmechubulai"
-//        
-//        tableView.addSubview(c)
-  
-        
-        let dataRow = indexPath.row + 1 //数组元素从1开始的，所以+1 ，indexPath默认为0
-        let dataGroup = data["\(dataRow)"] as! NSDictionary
-        print(dataGroup)
+        let ImageUrl = dataArray[indexPath.row].valueForKey("image") as! NSString
 
-//        let ImageUrl = dataGroup["image"] as! NSString
+        tableCell.syContentImage.image = UIImage(named: "\(ImageUrl)")
         
-        //赋值
-//        tableCell.syContentImage.image = UIImage(named:"\(ImageUrl)")
-//        tableCell.syContentTitle.text = dataGroup["title"] as? String
-//        tableCell.syContentTime.text = dataGroup["time"] as? String
-//        tableCell.syContentSource.text = dataGroup["source"] as? String
+        tableCell.syContentTitle.text = dataArray[indexPath.row].valueForKey("title") as? String
+        tableCell.syContentSource.text = dataArray[indexPath.row].valueForKey("source") as? String
+        
+        tableCell.syContentTime.text = dataArray[indexPath.row].valueForKey("time") as? String
 
-
-        
-   
-        
+      
         
         return tableCell
         
@@ -112,14 +129,30 @@ class LikeViewController: UITableViewController {
         return true
     }
     
+    // 删除数据
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        
+        if editingStyle == .Delete{
+            context.deleteObject(dataArray[indexPath.row] as! NSManagedObject )
+            appDel.saveContext()
+
+            refreshData()
+        }
+        
+    }
+
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         
+        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+        
         
         
     }
+    
+    
 
     
     
