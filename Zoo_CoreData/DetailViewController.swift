@@ -26,6 +26,8 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     //获取管理的数据上下文 对象
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
+    var dataArray:Array<AnyObject> = []
+    var context:NSManagedObjectContext!
 
     
     @IBOutlet weak var WebView: UIWebView!
@@ -63,18 +65,31 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     
     
+    
+    
     @IBAction func likeButton(sender: AnyObject) {
         
-        let context = appDel.managedObjectContext
-        let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
-        //插入数据
+        if dataArray.count == 0{
+            
+            
+            let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
+            //插入数据
 
-        
-        like.title = receiveTitle as String
-        like.image = receiveImage as String
-        like.url = receiveUrl as String
-        like.source = receiveSource as String
-        appDel.saveContext()
+            
+            //查询是否已经收藏
+            like.title = receiveTitle as String
+            like.image = receiveImage as String
+            like.url = receiveUrl as String
+            like.source = receiveSource as String
+            appDel.saveContext()
+            
+        } else{
+            let alert = UIAlertView()
+            alert.title = "您已经收藏过这篇文章"
+            alert.addButtonWithTitle("ok")
+            alert.show()
+        }
+       
         
         
     }
@@ -99,6 +114,33 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         WebView.reloadInputViews()
         WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )
         WebView.delegate = self
+        
+        
+        
+        
+        
+        context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        
+        
+        
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
+        
+        
+        let predicate = NSPredicate(format: "title= '\(receiveTitle)' ", "")
+        fetchRequest.predicate = predicate
+        
+        
+        
+        do{
+            dataArray = try context.executeFetchRequest(fetchRequest)
+            
+            
+        }catch{
+            print("error")
+        }
+        
+
   
         
         // Do any additional setup after loading the view.

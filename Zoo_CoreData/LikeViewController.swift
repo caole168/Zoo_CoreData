@@ -15,7 +15,6 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
     //获取管理的数据上下文 对象
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
-
     var dataArray:Array<AnyObject> = []
     var context:NSManagedObjectContext!
 
