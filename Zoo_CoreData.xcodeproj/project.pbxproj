@@ -67,6 +67,10 @@
 		5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */; };
 		5ECBF1541BEC406400A8EFEA /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */; };
 		5ECBF1561BEC7C1800A8EFEA /* LikeCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */; };
+		5EE43BD31BFDC12800A3E6F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD21BFDC12800A3E6F7 /* Security.framework */; };
+		5EE43BD51BFDC13500A3E6F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */; };
+		5EE43BD71BFDC14D00A3E6F7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */; };
+		5EE43BDB1BFDC2A200A3E6F7 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +160,11 @@
 		5ECBF1511BEB4A0C00A8EFEA /* SettingCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCellClass.swift; sourceTree = "<group>"; };
 		5ECBF1531BEC406400A8EFEA /* LikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		5ECBF1551BEC7C1800A8EFEA /* LikeCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCellClass.swift; sourceTree = "<group>"; };
+		5EE43BD21BFDC12800A3E6F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		5EE43BDA1BFDC2A200A3E6F7 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,11 +172,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE43BD71BFDC14D00A3E6F7 /* CoreMotion.framework in Frameworks */,
+				5EE43BD51BFDC13500A3E6F7 /* AdSupport.framework in Frameworks */,
+				5EE43BD31BFDC12800A3E6F7 /* Security.framework in Frameworks */,
 				5E168ED01BE9CB4B00A8502E /* libWeChatSDK.a in Frameworks */,
 				5E168E881BE9AACC00A8502E /* SystemConfiguration.framework in Frameworks */,
 				5E168E861BE9AAC100A8502E /* UIKit.framework in Frameworks */,
 				5E168E841BE9AAB900A8502E /* Foundation.framework in Frameworks */,
 				5E168E821BE9AAB200A8502E /* CoreGraphics.framework in Frameworks */,
+				5EE43BDB1BFDC2A200A3E6F7 /* libTalkingData.a in Frameworks */,
 				5E168E801BE9AAA000A8502E /* libsqlite3.tbd in Frameworks */,
 				5E168E7E1BE9AA9900A8502E /* libz.tbd in Frameworks */,
 				5E168E7C1BE9AA9000A8502E /* libc++.tbd in Frameworks */,
@@ -195,7 +208,9 @@
 		5E168E2C1BE9A69A00A8502E = {
 			isa = PBXGroup;
 			children = (
-				5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */,
+				5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */,
+				5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */,
+				5EE43BD21BFDC12800A3E6F7 /* Security.framework */,
 				5E168E871BE9AACC00A8502E /* SystemConfiguration.framework */,
 				5E168E851BE9AAC100A8502E /* UIKit.framework */,
 				5E168E831BE9AAB900A8502E /* Foundation.framework */,
@@ -209,6 +224,7 @@
 				5E168E5A1BE9A69B00A8502E /* Zoo_CoreDataUITests */,
 				5E168E361BE9A69A00A8502E /* Products */,
 				5E168E8C1BE9AF6600A8502E /* WeChatSDK */,
+				5EE43BD11BFDC05D00A3E6F7 /* TalkingData */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +278,7 @@
 		5E168E8C1BE9AF6600A8502E /* WeChatSDK */ = {
 			isa = PBXGroup;
 			children = (
+				5E168ECF1BE9CB4B00A8502E /* libWeChatSDK.a */,
 				5E168ED11BE9CB5200A8502E /* WXApi.h */,
 				5E168ED21BE9CB5200A8502E /* WXApiObject.h */,
 				5E168E951BE9B27600A8502E /* WeChatBridge.h */,
@@ -337,6 +354,15 @@
 				5ECBF14B1BEAECCB00A8EFEA /* setting.plist */,
 			);
 			name = support;
+			sourceTree = "<group>";
+		};
+		5EE43BD11BFDC05D00A3E6F7 /* TalkingData */ = {
+			isa = PBXGroup;
+			children = (
+				5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */,
+				5EE43BDA1BFDC2A200A3E6F7 /* TalkingData.h */,
+			);
+			name = TalkingData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zoo_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -659,6 +686,7 @@
 					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;
@@ -670,6 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zoo_CoreData/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -679,6 +708,7 @@
 					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;

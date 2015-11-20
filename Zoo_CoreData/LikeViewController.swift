@@ -16,28 +16,12 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     //获取管理的数据上下文 对象
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
     var dataArray:Array<AnyObject> = []
+    var dataArrayReverse:Array<AnyObject> = []  //倒叙输出
     var context:NSManagedObjectContext!
 
     //屏幕尺寸
     let Screen = UIScreen.mainScreen().bounds
 
-    
-    //刷新列表数据
-    func refreshData() {
-        
-        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
-        
-        do{
-            dataArray = try context.executeFetchRequest(fetchRequest)
-            print(dataArray)
-            
-        }catch{
-            print("error")
-        }
-        
-        tableView.reloadData()
-        
-    }
     
     
 
@@ -47,7 +31,8 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         
         
         context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
+        
+        
         refreshData()
 
         tableView.registerClass(LikeTableViewCell.self, forCellReuseIdentifier: "likeCell")
@@ -73,8 +58,14 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+        TalkingData.trackPageBegin("ShouCang")
     }
     
+
+    override func viewWillDisappear(animated: Bool) {
+        TalkingData.trackPageEnd("ShouCang")
+        
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -106,14 +97,14 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
         let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         
-        let ImageUrl = dataArray[indexPath.row].valueForKey("image") as! NSString
+        let ImageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as! NSString
 
         tableCell.syContentImage.image = UIImage(named: "\(ImageUrl)")
         
-        tableCell.syContentTitle.text = dataArray[indexPath.row].valueForKey("title") as? String
-        tableCell.syContentSource.text = dataArray[indexPath.row].valueForKey("source") as? String
+        tableCell.syContentTitle.text = dataArrayReverse[indexPath.row].valueForKey("title") as? String
+        tableCell.syContentSource.text = dataArrayReverse[indexPath.row].valueForKey("source") as? String
         
-        tableCell.syContentTime.text = dataArray[indexPath.row].valueForKey("time") as? String
+        tableCell.syContentTime.text = dataArrayReverse[indexPath.row].valueForKey("time") as? String
 
       
         
@@ -150,6 +141,26 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         
         
     }
+    
+    //刷新列表数据
+    func refreshData() {
+        
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
+        
+        do{
+            dataArray = try context.executeFetchRequest(fetchRequest)
+            dataArrayReverse = dataArray.reverse()  //翻转数组
+            
+        }catch{
+            print("error")
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+   
+    
     
     
 

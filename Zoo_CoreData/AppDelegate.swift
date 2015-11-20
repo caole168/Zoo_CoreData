@@ -17,7 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate{
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-         WXApi.registerApp("wx5e0be8387470d1b0")
+         WXApi.registerApp("wx5e0be8387470d1b0")//微信分享注册
+        
+        TalkingData.sessionStarted("7E695F4B322729E84EE32B92CF92F780", withChannelId: "")//talkingData注册
         
         return true
     }

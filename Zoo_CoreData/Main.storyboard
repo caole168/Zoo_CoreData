@@ -184,12 +184,12 @@
                                     <size key="titleShadowOffset" width="2.2250738585072014e-308" height="2.2250738585072014e-308"/>
                                     <state key="normal" image="share"/>
                                     <connections>
-                                        <action selector="sharButton:" destination="Q2s-LV-1EJ" eventType="touchUpInside" id="spU-lw-lnT"/>
+                                        <action selector="shareButton:" destination="Q2s-LV-1EJ" eventType="touchUpInside" id="dQQ-u2-iGa"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
                             <barButtonItem style="plain" id="3tO-LX-Qop">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jVQ-FM-PDM">
+                                <button key="customView" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jVQ-FM-PDM">
                                     <rect key="frame" x="484" y="11" width="44" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
@@ -206,6 +206,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="WebView" destination="5LN-Hq-6i5" id="Wf7-Wt-Doa"/>
+                        <outlet property="likeButton" destination="jVQ-FM-PDM" id="6mH-sm-IRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAw-FZ-yuV" userLabel="First Responder" sceneMemberID="firstResponder"/>

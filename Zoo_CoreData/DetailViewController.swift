@@ -31,8 +31,113 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
 
     
     @IBOutlet weak var WebView: UIWebView!
+    @IBOutlet weak var likeButton: UIButton!
     
-    @IBAction func sharButton(sender: AnyObject) {
+    
+
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        
+        loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        WebView.reload()
+        WebView.reloadInputViews()
+        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )
+        WebView.delegate = self
+        
+        
+
+        
+        context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
+        let predicate = NSPredicate(format: "title= '\(receiveTitle)' ", "")
+        fetchRequest.predicate = predicate
+        
+        do{
+            dataArray = try context.executeFetchRequest(fetchRequest)
+            
+        }catch{
+            print("error")
+        }
+        
+        if dataArray.count != 0{
+            likeButton.setImage(UIImage(named: "like_fill"), forState: UIControlState.Normal)
+        }else{
+             likeButton.setImage(UIImage(named: "like"), forState: UIControlState.Normal)
+        }
+       
+        
+  
+        
+        // Do any additional setup after loading the view.
+    }
+
+    
+    func webViewDidStartLoad(webView: UIWebView){
+        print("_____________________")
+        let Screen = UIScreen.mainScreen().bounds
+        let ScreenWidth = Screen.width
+        let ScreenHeight = Screen.height
+    
+        
+
+        loadImage.frame = CGRectMake(ScreenWidth/2.3, ScreenHeight/2, 50, 50)
+        loadImage.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        self.view.addSubview(loadImage)
+        loadImage.startAnimating()
+        
+        //webview开始加载
+    
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        TalkingData.trackPageBegin("XiangQing")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        TalkingData.trackPageEnd("XiangQing")
+        
+    }
+    
+
+    
+    func webViewDidFinishLoad(webView: UIWebView){
+        
+        loadImage.stopAnimating()
+        loadImage.hidesWhenStopped = true
+        
+        //webview结束加载
+    }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?){
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    
+
+  //
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    //分享按钮
+    @IBAction func shareButton(sender: AnyObject) {
         
         let ShareController = UIAlertController(title: "分享到", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -60,76 +165,17 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
         presentViewController(ShareController, animated: true, completion: nil)
         
-        
+
     }
     
     
-    
-    
-    
+    //收藏按钮
     @IBAction func likeButton(sender: AnyObject) {
         
-        if dataArray.count == 0{
-            
-            
-            let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
-            //插入数据
-
-            
-            //查询是否已经收藏
-            like.title = receiveTitle as String
-            like.image = receiveImage as String
-            like.url = receiveUrl as String
-            like.source = receiveSource as String
-            appDel.saveContext()
-            
-        } else{
-            let alert = UIAlertView()
-            alert.title = "您已经收藏过这篇文章"
-            alert.addButtonWithTitle("ok")
-            alert.show()
-        }
-       
-        
-        
-    }
-    
-    
-  
-
-    
-
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-  //      self.navigationItem.title = "\(ReceiveTitle)"
-   
-
-        
-        loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        WebView.reload()
-        WebView.reloadInputViews()
-        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )
-        WebView.delegate = self
-        
-        
-        
-        
-        
         context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        
-        
-        
-        
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
-        
-        
         let predicate = NSPredicate(format: "title= '\(receiveTitle)' ", "")
         fetchRequest.predicate = predicate
-        
         
         
         do{
@@ -140,58 +186,35 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
             print("error")
         }
         
+        
+        
+        if dataArray.count == 0{
+        
+            let like = NSEntityDescription.insertNewObjectForEntityForName("Entity", inManagedObjectContext: context) as! Entity
+            like.title = receiveTitle as String
+            like.image = receiveImage as String
+            like.url = receiveUrl as String
+            like.source = receiveSource as String
+            appDel.saveContext()
+            //插入数据
+            
+            likeButton.setImage(UIImage(named: "like_fill"), forState: UIControlState.Normal)
+            
+        } else{
 
-  
+            for info:Entity in dataArray as! [Entity]{
+            context.deleteObject(info)
+            }
+            appDel.saveContext()
+            likeButton.setImage(UIImage(named: "like"), forState: UIControlState.Normal)
+            
+        }
         
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-
-    
-    func webViewDidStartLoad(webView: UIWebView){
-        print("_____________________")
-        let Screen = UIScreen.mainScreen().bounds
-        let ScreenWidth = Screen.width
-        let ScreenHeight = Screen.height
-    
         
-
-        loadImage.frame = CGRectMake(ScreenWidth/2.3, ScreenHeight/2, 50, 50)
-        loadImage.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        self.view.addSubview(loadImage)
-        loadImage.startAnimating()
-        
-        //webview开始加载
-    
-    }
-    func webViewDidFinishLoad(webView: UIWebView){
-        
-        loadImage.stopAnimating()
-        loadImage.hidesWhenStopped = true
-        
-        //webview结束加载
-    }
-    
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?){
         
     }
 
-  //
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }

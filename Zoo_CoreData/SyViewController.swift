@@ -66,13 +66,22 @@ class SyViewController: UITableViewController{
         pullRefreshControl.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
         
     }
-
     
+    override func viewWillAppear(animated: Bool) {
+        TalkingData.trackPageBegin("ShouYe")
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        TalkingData.trackPageEnd("ShouYe")
+        
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     
@@ -126,13 +135,7 @@ class SyViewController: UITableViewController{
         sendSource = dataGroup["source"] as! NSString
         
         tableView .deselectRowAtIndexPath(indexPath, animated: true)
-    
-       // let goDetailContent = DetailViewController()
-        
-       // goDetailContent.ReceiveUrl = SendUrl
-       // goDetailContent.PageTitle = SendTitle
-      //  print(goDetailContent.ReceiveUrl)
-      //  print(goDetailContent.PageTitle)
+
         self.performSegueWithIdentifier("goDetailContentSegue", sender: indexPath)
 
         

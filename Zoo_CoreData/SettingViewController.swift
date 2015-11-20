@@ -29,6 +29,18 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        TalkingData.trackPageBegin("SheZhi")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        TalkingData.trackPageEnd("SheZhi")
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
