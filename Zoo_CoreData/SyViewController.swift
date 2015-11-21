@@ -99,7 +99,7 @@ class SyViewController: UITableViewController{
         let tableCell : SyTableViewCell = tableView.dequeueReusableCellWithIdentifier("SyCell", forIndexPath: indexPath) as! SyTableViewCell
    
         
-        tableView.rowHeight = 99
+        tableView.rowHeight = 102
         
     //    tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
