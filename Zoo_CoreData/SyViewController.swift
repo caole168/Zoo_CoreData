@@ -134,7 +134,7 @@ class SyViewController: UITableViewController{
         sendImage = dataGroup["image"] as! NSString
         sendSource = dataGroup["source"] as! NSString
         
-        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
         self.performSegueWithIdentifier("goDetailContentSegue", sender: indexPath)
 

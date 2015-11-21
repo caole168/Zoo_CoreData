@@ -109,8 +109,10 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         switch(indexPath.row){
         case 0:
             self.navigationController?.pushViewController(likeVc, animated: true);
-        case 1:
-            self.navigationController?.pushViewController(likeVc, animated: true);
+//        case 1:
+//            UIApplication.sharedApplication().openURL(NSURL(string: "http://www.baidu.com")!);
+            
+        
             
             
         default:

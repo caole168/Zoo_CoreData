@@ -130,7 +130,7 @@
         <!--Detail View Controller-->
         <scene sceneID="fmv-Um-axn">
             <objects>
-                <viewController id="Q2s-LV-1EJ" customClass="DetailViewController" customModule="Zoo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q2s-LV-1EJ" customClass="DetailViewController" customModule="Zoo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oht-j0-NfP"/>
                         <viewControllerLayoutGuide type="bottom" id="2Wn-rN-gIn"/>

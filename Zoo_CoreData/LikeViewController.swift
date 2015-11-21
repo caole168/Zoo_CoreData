@@ -59,11 +59,14 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         TalkingData.trackPageBegin("ShouCang")
+        print("i'm here")
+        
     }
     
 
     override func viewWillDisappear(animated: Bool) {
         TalkingData.trackPageEnd("ShouCang")
+        
         
     }
     
@@ -113,6 +116,34 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     }
     
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        
+        tableView .deselectRowAtIndexPath(indexPath, animated: true)
+        
+        //跳转至detailViewController（ StoryBoard ）
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        
+        vc.receiveUrl = dataArrayReverse[indexPath.row].valueForKey("url") as? String
+        vc.receiveTitle = dataArrayReverse[indexPath.row].valueForKey("title") as? String
+        vc.receiveImage = dataArrayReverse[indexPath.row].valueForKey("image") as? String
+        vc.receiveSource = dataArrayReverse[indexPath.row].valueForKey("source") as? String
+
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //segue 传值
+        
+        
+    
+    }
+    
+
+    
     // 支持单元格编辑功能
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
@@ -133,14 +164,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
 
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        
-        tableView .deselectRowAtIndexPath(indexPath, animated: true)
-        
-        
-        
-    }
+    
     
     //刷新列表数据
     func refreshData() {

@@ -109,6 +109,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
         loadImage.stopAnimating()
         loadImage.hidesWhenStopped = true
+    
         
         //webview结束加载
     }

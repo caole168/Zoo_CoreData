@@ -13,38 +13,5 @@
 		<key>abstract</key>
 		<string></string>
 	</dict>
-	<key>2</key>
-	<dict>
-		<key>title</key>
-		<string>版本号</string>
-		<key>image</key>
-		<string>version</string>
-		<key>class</key>
-		<string></string>
-		<key>abstract</key>
-		<string>V 1.0</string>
-	</dict>
-	<key>3</key>
-	<dict>
-		<key>title</key>
-		<string>关于我们</string>
-		<key>image</key>
-		<string>about</string>
-		<key>class</key>
-		<string></string>
-		<key>abstract</key>
-		<string></string>
-	</dict>
-	<key>4</key>
-	<dict>
-		<key>title</key>
-		<string>去App Store评分</string>
-		<key>image</key>
-		<string>appstore</string>
-		<key>class</key>
-		<string></string>
-		<key>abstract</key>
-		<string></string>
-	</dict>
 </dict>
 </plist>
