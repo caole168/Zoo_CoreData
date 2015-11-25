@@ -18,7 +18,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     var receiveTitle:NSString!
     var receiveImage:NSString!
     var receiveSource:NSString!
-    var likeButtonTag:NSInteger!
+    var likeButtonTag:NSInteger?
     
     var loadUrl:NSString!
     var pageTitle:NSString!

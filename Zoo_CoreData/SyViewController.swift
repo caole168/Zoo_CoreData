@@ -20,10 +20,10 @@ class SyViewController: UITableViewController{
     
     
     //传值
-    var sendUrl:NSString!
-    var sendTitle:NSString!
-    var sendImage:NSString!
-    var sendSource:NSString!
+    var sendUrl:NSString?
+    var sendTitle:NSString?
+    var sendImage:NSString?
+    var sendSource:NSString?
     
     
     //下拉刷新空间
@@ -154,7 +154,8 @@ class SyViewController: UITableViewController{
                     goDetailContent.receiveTitle = sendTitle
                     goDetailContent.receiveImage = sendImage
                     goDetailContent.receiveSource = sendSource
-                    goDetailContent.likeButtonTag = 0
+//                    goDetailContent.likeButtonTag = 0
+//                    //likeButtonTag值为1时，无收藏按钮
 
                 }
     
