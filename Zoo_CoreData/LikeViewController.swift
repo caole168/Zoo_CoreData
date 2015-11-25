@@ -23,7 +23,6 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     let Screen = UIScreen.mainScreen().bounds
 
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +48,13 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
             noSign.textColor = UIColor.grayColor()
             self.view.addSubview(noSign)
             
+            
         }
+        //去掉返回按钮文字
+        let backButton = UIBarButtonItem()
+        backButton.image = UIImage(named: "")
+        backButton.title = ""
+        self.navigationItem.backBarButtonItem = backButton
         
     }
         
@@ -57,14 +62,21 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+        
+        tableView.reloadData()
         TalkingData.trackPageBegin("ShouCang")
         print("i'm here")
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+          tableView.reloadData()
+           }
 
     override func viewWillDisappear(animated: Bool) {
+        
+        tableView.reloadData()
+
         TalkingData.trackPageEnd("ShouCang")
         
         
@@ -129,6 +141,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         vc.receiveTitle = dataArrayReverse[indexPath.row].valueForKey("title") as? String
         vc.receiveImage = dataArrayReverse[indexPath.row].valueForKey("image") as? String
         vc.receiveSource = dataArrayReverse[indexPath.row].valueForKey("source") as? String
+        vc.likeButtonTag = 1
 
         self.navigationController?.pushViewController(vc, animated: true)
         

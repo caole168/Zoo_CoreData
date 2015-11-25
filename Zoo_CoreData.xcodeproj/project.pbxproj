@@ -688,7 +688,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
+				PRODUCT_BUNDLE_IDENTIFIER = "Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;
 			};
@@ -711,7 +711,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "pincher.Zoo-CoreData";
+				PRODUCT_BUNDLE_IDENTIFIER = "Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
 				SWIFT_OBJC_BRIDGING_HEADER = WeChatBridge.h;
 			};

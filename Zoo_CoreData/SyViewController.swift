@@ -18,6 +18,7 @@ class SyViewController: UITableViewController{
     var plistData:NSString = ""
     var data:NSMutableDictionary = NSMutableDictionary()
     
+    
     //传值
     var sendUrl:NSString!
     var sendTitle:NSString!
@@ -153,6 +154,7 @@ class SyViewController: UITableViewController{
                     goDetailContent.receiveTitle = sendTitle
                     goDetailContent.receiveImage = sendImage
                     goDetailContent.receiveSource = sendSource
+                    goDetailContent.likeButtonTag = 0
 
                 }
     

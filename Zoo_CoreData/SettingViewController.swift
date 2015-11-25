@@ -19,6 +19,14 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewDidLoad()
         
         
+        
+        //去掉返回按钮文字
+        let backButton = UIBarButtonItem()
+        backButton.image = UIImage(named: "")
+        backButton.title = ""
+        self.navigationItem.backBarButtonItem = backButton
+        
+        
         //  -----------读取plist文件----------------
         plistData = NSBundle.mainBundle().pathForResource("setting", ofType: "plist")!
         data = NSMutableDictionary(contentsOfFile: plistData as String)!

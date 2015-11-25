@@ -18,6 +18,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     var receiveTitle:NSString!
     var receiveImage:NSString!
     var receiveSource:NSString!
+    var likeButtonTag:NSInteger!
     
     var loadUrl:NSString!
     var pageTitle:NSString!
@@ -69,6 +70,11 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
              likeButton.setImage(UIImage(named: "like"), forState: UIControlState.Normal)
         }
        
+        
+        if likeButtonTag == 1{
+             likeButton.hidden = true
+            //如果是从收藏进来的，则无收藏按钮
+        }
         
   
         
