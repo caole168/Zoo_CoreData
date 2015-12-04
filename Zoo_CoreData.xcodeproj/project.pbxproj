@@ -70,7 +70,7 @@
 		5EE43BD31BFDC12800A3E6F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD21BFDC12800A3E6F7 /* Security.framework */; };
 		5EE43BD51BFDC13500A3E6F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */; };
 		5EE43BD71BFDC14D00A3E6F7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */; };
-		5EE43BDB1BFDC2A200A3E6F7 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */; };
+		5EEE82BF1C0D43B7000C6BA1 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEE82BD1C0D43B7000C6BA1 /* libTalkingData.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,8 +163,8 @@
 		5EE43BD21BFDC12800A3E6F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
-		5EE43BDA1BFDC2A200A3E6F7 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		5EEE82BD1C0D43B7000C6BA1 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		5EEE82BE1C0D43B7000C6BA1 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +180,7 @@
 				5E168E861BE9AAC100A8502E /* UIKit.framework in Frameworks */,
 				5E168E841BE9AAB900A8502E /* Foundation.framework in Frameworks */,
 				5E168E821BE9AAB200A8502E /* CoreGraphics.framework in Frameworks */,
-				5EE43BDB1BFDC2A200A3E6F7 /* libTalkingData.a in Frameworks */,
+				5EEE82BF1C0D43B7000C6BA1 /* libTalkingData.a in Frameworks */,
 				5E168E801BE9AAA000A8502E /* libsqlite3.tbd in Frameworks */,
 				5E168E7E1BE9AA9900A8502E /* libz.tbd in Frameworks */,
 				5E168E7C1BE9AA9000A8502E /* libc++.tbd in Frameworks */,
@@ -359,8 +359,8 @@
 		5EE43BD11BFDC05D00A3E6F7 /* TalkingData */ = {
 			isa = PBXGroup;
 			children = (
-				5EE43BD91BFDC2A200A3E6F7 /* libTalkingData.a */,
-				5EE43BDA1BFDC2A200A3E6F7 /* TalkingData.h */,
+				5EEE82BD1C0D43B7000C6BA1 /* libTalkingData.a */,
+				5EEE82BE1C0D43B7000C6BA1 /* TalkingData.h */,
 			);
 			name = TalkingData;
 			sourceTree = "<group>";

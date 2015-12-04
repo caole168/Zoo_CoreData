@@ -30,12 +30,25 @@ class SyViewController: UITableViewController{
     let pullRefreshControl = UIRefreshControl()
     //var plist
     
-
+    var objectCCC :Array< AnyObject>  = []
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        let url = NSURL(string: "http://121.42.213.89/app/index.php/Home/Admin/api?page=0")
+        let jsonData = NSData(contentsOfURL: url!)
+        
+        do {
+             objectCCC = try NSJSONSerialization.JSONObjectWithData(jsonData!, options:NSJSONReadingOptions.MutableContainers) as! Array<AnyObject>
+            
+            print(objectCCC)
+        }catch{
+            print("error")
+        }
+        
+        
         
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
@@ -107,8 +120,10 @@ class SyViewController: UITableViewController{
         //加载数据
         let dataRow = indexPath.row + 1 //数组元素从1开始的，所以+1 ，indexPath默认为0
         let dataGroup = data["\(dataRow)"] as! NSDictionary
+        
+       // let dataGroup = objectCCC["\(dataRow)"] as! NSDictionary
+        
         let ImageUrl = dataGroup["image"] as! NSString
-     
         
         //赋值
         tableCell.syContentImage.image = UIImage(named:"\(ImageUrl)")
@@ -130,10 +145,10 @@ class SyViewController: UITableViewController{
         let dataRow = indexPath.row + 1
         let dataGroup = data["\(dataRow)"] as! NSDictionary
         
-        sendUrl = dataGroup["url"] as! NSString
-        sendTitle = dataGroup["title"] as! NSString
-        sendImage = dataGroup["image"] as! NSString
-        sendSource = dataGroup["source"] as! NSString
+        sendUrl = dataGroup["url"] as? NSString
+        sendTitle = dataGroup["title"] as? NSString
+        sendImage = dataGroup["image"] as? NSString
+        sendSource = dataGroup["source"] as? NSString
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
 
