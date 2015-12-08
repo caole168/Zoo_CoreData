@@ -112,9 +112,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
         let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         
-        let ImageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as! NSString
-
-        tableCell.syContentImage.image = UIImage(named: "\(ImageUrl)")
+        let imageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as! NSString
         
         tableCell.syContentTitle.text = dataArrayReverse[indexPath.row].valueForKey("title") as? String
         tableCell.syContentSource.text = dataArrayReverse[indexPath.row].valueForKey("source") as? String
@@ -122,7 +120,8 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         tableCell.syContentTime.text = dataArrayReverse[indexPath.row].valueForKey("time") as? String
 
       
-        
+        tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)" ))
+
         return tableCell
         
     }

@@ -20,7 +20,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SyCell" rowHeight="139" id="PxI-Hd-fiq" customClass="SyTableViewCell" customModule="Zoo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="139"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PxI-Hd-fiq" id="Fb1-Y5-Cqj">
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PxI-Hd-fiq" id="Fb1-Y5-Cqj">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="138.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>

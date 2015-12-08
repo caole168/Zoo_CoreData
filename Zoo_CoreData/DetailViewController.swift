@@ -46,7 +46,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         WebView.reload()
         WebView.reloadInputViews()
-        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://\(loadUrl)")! ) )
+        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "\(loadUrl)")! ) )
         WebView.delegate = self
         
         
@@ -130,20 +130,9 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     }
     
     
-    
 
-  //
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-    //分享按钮
+    //分享按钮action
     @IBAction func shareButton(sender: AnyObject) {
         
         let ShareController = UIAlertController(title: "分享到", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -176,7 +165,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     }
     
     
-    //收藏按钮
+    //收藏按钮action
     @IBAction func likeButton(sender: AnyObject) {
         
         context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext

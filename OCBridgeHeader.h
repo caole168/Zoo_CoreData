@@ -23,6 +23,8 @@
 #import "TalkingData.h"
 
 
+#import "UIImageView+WebCache.h"
+
 
 
 #endif
