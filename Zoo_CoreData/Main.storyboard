@@ -31,7 +31,7 @@
                                                 <constraint firstAttribute="height" constant="81" id="UjS-4J-tIn"/>
                                                 <constraint firstAttribute="width" constant="120" id="pzZ-fK-aJQ"/>
                                             </constraints>
-                                            <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <rect key="frame" x="57" y="10" width="333" height="56"/>
                                             </variation>
                                         </imageView>
@@ -193,8 +193,8 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-Hq-6i5">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-Hq-6i5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
@@ -209,10 +209,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="5LN-Hq-6i5" secondAttribute="trailing" constant="-19" id="GMB-jX-YRW"/>
-                            <constraint firstItem="5LN-Hq-6i5" firstAttribute="top" secondItem="yjD-BN-0Fi" secondAttribute="top" constant="-10" id="J01-CY-WdS"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="5LN-Hq-6i5" secondAttribute="bottom" constant="-20" id="iFz-fL-jLa"/>
-                            <constraint firstItem="5LN-Hq-6i5" firstAttribute="leading" secondItem="yjD-BN-0Fi" secondAttribute="leadingMargin" constant="-19" id="xxv-dN-fpf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5LN-Hq-6i5" secondAttribute="trailing" constant="-20" id="GMB-jX-YRW"/>
+                            <constraint firstItem="5LN-Hq-6i5" firstAttribute="top" secondItem="yjD-BN-0Fi" secondAttribute="top" id="J01-CY-WdS"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5LN-Hq-6i5" secondAttribute="bottom" id="iFz-fL-jLa"/>
+                            <constraint firstItem="5LN-Hq-6i5" firstAttribute="leading" secondItem="yjD-BN-0Fi" secondAttribute="leadingMargin" constant="-20" id="xxv-dN-fpf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wsJ-U5-Hpp">

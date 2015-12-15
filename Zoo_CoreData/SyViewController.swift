@@ -14,8 +14,12 @@ class SyViewController: UITableViewController{
     //传值
     var sendUrl:NSString?
     var sendTitle:NSString?
-    var sendImage:NSString?
+    var sendImage:String?
     var sendSource:NSString?
+    //屏幕尺寸
+    let Screen = UIScreen.mainScreen().bounds
+    
+
     
     
     //下拉刷新控件
@@ -35,7 +39,7 @@ class SyViewController: UITableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
         backButton.title = ""
@@ -89,10 +93,6 @@ class SyViewController: UITableViewController{
         
         
         getHttp()
-        print("lallalalala")
-        print(self.tableView.contentOffset.y)
-        print(self.tableView.contentSize.height)
-        print(self.tableView.frame.size.height)
         
 
     }
@@ -152,7 +152,7 @@ class SyViewController: UITableViewController{
         
         tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)" ))
         
-//    
+//
 //        print("_______________________________________")
 //        print(self.tableView.contentOffset)
 //
@@ -164,6 +164,7 @@ class SyViewController: UITableViewController{
         
 //        print(pullUpDistance)
         
+        //当页面华东到底部时且下个页面有数据自动加载
         if pullUpDistance > 45 && loadMoreState == true {
             loadMore()
             
@@ -185,7 +186,9 @@ class SyViewController: UITableViewController{
         
         sendUrl = dataGroup["url"] as? NSString
         sendTitle = dataGroup["title"] as? NSString
-        sendImage = dataGroup["imageUrl"] as? NSString
+        
+        sendImage = dataGroup["imageUrl"] as? String
+            
         sendSource = dataGroup["source"] as? NSString
     
         

@@ -9,32 +9,39 @@
 import UIKit
 
 
-func sendText(type:Int32 , ShareTitle:NSString , ShareUrl:NSString) {
+func sendText(type:Int32 , shareTitle:NSString , shareUrl:NSString , shareImage:NSData) {
     
-   
+
     //分享到好友
-    let req = SendMessageToWXReq()
-    let shareUrl = WXWebpageObject()
-    
+    let req = SendMessageToWXReq()//发送的文本信息
+    let url = WXWebpageObject()
+    let message = WXMediaMessage()
 
     
     //分享地址
-    shareUrl.webpageUrl = "\(ShareUrl)"
+    url.webpageUrl = "\(shareUrl)"
     
-    let message = WXMediaMessage()
+      
     //分享标题
-    message.title = "\(ShareTitle)"
+    message.title = "\(shareTitle)"
+    
+    
     //分享描述
     message.description = "欢迎关注微信公众号：it_zoo!"
+    message.mediaObject = url
+    message.thumbData = shareImage
+ 
+
+
     
-    message.mediaObject = shareUrl
     req.message = message
+    req.scene = Int32(type)
     req.bText = false
     
+    print(WXApi.sendReq(req))
     
-    req.scene = Int32(type)
+    
     WXApi.sendReq(req)
-    
 }
 
 

@@ -176,6 +176,8 @@ enum WXMPWebviewType {
  * @see SendMessageToWXResp
  */
 @interface SendMessageToWXReq : BaseReq
+
+
 /** 发送消息的文本内容
  * @note 文本长度必须大于0且小于10K
  */
@@ -442,33 +444,47 @@ enum WXMPWebviewType {
  */
 @interface WXMediaMessage : NSObject
 
+
 +(WXMediaMessage *) message;
 
 /** 标题
  * @note 长度不能超过512字节
  */
 @property (nonatomic, retain) NSString *title;
+
+
 /** 描述内容
  * @note 长度不能超过1K
  */
 @property (nonatomic, retain) NSString *description;
+
+
+
 /** 缩略图数据
  * @note 大小不能超过32K
  */
 @property (nonatomic, retain) NSData   *thumbData;
+
+
 /**
  * @note 长度不能超过64字节
  */
 @property (nonatomic, retain) NSString *mediaTagName;
+
+
 /**
  *
  */
 @property (nonatomic, retain) NSString *messageExt;
 @property (nonatomic, retain) NSString *messageAction;
+
+
 /**
  * 多媒体数据对象，可以为WXImageObject，WXMusicObject，WXVideoObject，WXWebpageObject等。
  */
 @property (nonatomic, retain) id        mediaObject;
+
+
 
 /*! @brief 设置消息缩略图的方法
  *

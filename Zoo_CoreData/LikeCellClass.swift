@@ -42,11 +42,23 @@ class LikeTableViewCell: UITableViewCell {
         
         if Screen.width == 320.0{
             
-            syContentImage.frame = CGRectMake(2, 18, 282, 153)
-            syContentTitle.frame = CGRectMake(2, 182, 282, 50)   //  iphone 5  *1.17
-            syContentTime.frame  = CGRectMake(2, 182, 282, 50)
-            self.frame = CGRectMake(0, 0, ScreenWidth, 180)
+  
+            syContentImage.frame = CGRectMake(180,9,120,81) //  iphone 5  1.17
+            syContentTitle.frame = CGRectMake(10,10, 160,46)
+            syContentTime.frame  = CGRectMake(100, 77, 100, 20)
+            syContentSource.frame = CGRectMake(10, 77, 80, 20)
+   
             
+            
+            syContentTitle.font     = UIFont(name:"Arial", size: 15)
+            
+            
+            syContentSource.font    = UIFont(name:"Arial", size:11)
+            syContentSource.textColor = UIColor.grayColor()
+            
+            
+            syContentTime.font      = UIFont(name: "Arial", size: 11)
+            syContentTime.textColor = UIColor.grayColor()
         }
         
         
@@ -74,10 +86,21 @@ class LikeTableViewCell: UITableViewCell {
         
         
         if Screen.width == 414.0{
+            syContentImage.frame = CGRectMake(246,9,120,81) //  iphone 6plus
+            syContentTitle.frame = CGRectMake(10,10, 220,46)
+            syContentTime.frame  = CGRectMake(100, 77, 100, 20)
+            syContentSource.frame = CGRectMake(10, 77, 80, 20)
             
-            syContentImage.frame = CGRectMake(24, 24, 364, 198)   // iphone 6 plus   1.10
-            syContentTitle.frame = CGRectMake(24, 235,364, 30)
             
+            syContentTitle.font     = UIFont(name:"Arial", size: 15)
+            
+            
+            syContentSource.font    = UIFont(name:"Arial", size:11)
+            syContentSource.textColor = UIColor.grayColor()
+            
+            
+            syContentTime.font      = UIFont(name: "Arial", size: 11)
+            syContentTime.textColor = UIColor.grayColor()
         }
         
         

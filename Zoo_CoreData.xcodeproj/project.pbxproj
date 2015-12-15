@@ -289,7 +289,6 @@
 		5E168E371BE9A69A00A8502E /* Zoo_CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				5E7FADC51C16915700D40A83 /* SDImage */,
 				5E168E381BE9A69A00A8502E /* AppDelegate.swift */,
 				5E168E6B1BE9A97500A8502E /* Main.storyboard */,
 				5E168E711BE9AA2400A8502E /* SyViewController.swift */,
@@ -301,6 +300,7 @@
 				5E168E951BE9B27600A8502E /* OCBridgeHeader.h */,
 				5ECBF14A1BEAEC5400A8EFEA /* support */,
 				5E168ED41BE9CCB600A8502E /* CoreData */,
+				5E7FADC51C16915700D40A83 /* SDImage */,
 				5E168ED31BE9CCAB00A8502E /* class */,
 				5E168E9A1BE9B36600A8502E /* image */,
 			);

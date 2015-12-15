@@ -65,7 +65,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         
         tableView.reloadData()
         TalkingData.trackPageBegin("ShouCang")
-        print("i'm here")
+      
         
     }
     
@@ -112,7 +112,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
         let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         
-        let imageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as! NSString
+        let imageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as? String
         
         tableCell.syContentTitle.text = dataArrayReverse[indexPath.row].valueForKey("title") as? String
         tableCell.syContentSource.text = dataArrayReverse[indexPath.row].valueForKey("source") as? String
@@ -120,8 +120,11 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         tableCell.syContentTime.text = dataArrayReverse[indexPath.row].valueForKey("time") as? String
 
       
-        tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)" ))
+        tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)"))
 
+        
+        print("=======================")
+        print(tableCell.syContentImage)
         return tableCell
         
     }
