@@ -17,6 +17,7 @@ class SettingCell: UITableViewCell{
     
     @IBOutlet weak var settingTitle: UILabel!
 
+
     
     
     

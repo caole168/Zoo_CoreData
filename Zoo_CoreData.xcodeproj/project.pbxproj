@@ -79,6 +79,12 @@
 		5E7FADF91C16915700D40A83 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FADE51C16915700D40A83 /* UIImageView+WebCache.m */; };
 		5E7FADFA1C16915700D40A83 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FADE71C16915700D40A83 /* UIView+WebCacheOperation.m */; };
 		5E7FADFB1C16915700D40A83 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FADE91C16915700D40A83 /* Info.plist */; };
+		5EAF8E3A1C200D5E00A2D581 /* DGElasticPullToRefreshConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E351C200D5E00A2D581 /* DGElasticPullToRefreshConstants.swift */; };
+		5EAF8E3B1C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E361C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift */; };
+		5EAF8E3C1C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E371C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift */; };
+		5EAF8E3D1C200D5E00A2D581 /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E381C200D5E00A2D581 /* DGElasticPullToRefreshLoadingViewCircle.swift */; };
+		5EAF8E3E1C200D5E00A2D581 /* DGElasticPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E391C200D5E00A2D581 /* DGElasticPullToRefreshView.swift */; };
+		5EAF8E401C2010C000A2D581 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAF8E3F1C2010C000A2D581 /* RefreshViewController.swift */; };
 		5EBF64881BF486870023BE73 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBF64871BF486870023BE73 /* CoreDataViewController.swift */; };
 		5ECBF14C1BEAECCB00A8EFEA /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5ECBF14B1BEAECCB00A8EFEA /* setting.plist */; };
 		5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */; };
@@ -208,6 +214,12 @@
 		5E7FADE71C16915700D40A83 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		5E7FADE91C16915700D40A83 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E7FADEA1C16915700D40A83 /* WebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImage.h; sourceTree = "<group>"; };
+		5EAF8E351C200D5E00A2D581 /* DGElasticPullToRefreshConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshConstants.swift; sourceTree = "<group>"; };
+		5EAF8E361C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshExtensions.swift; sourceTree = "<group>"; };
+		5EAF8E371C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingView.swift; sourceTree = "<group>"; };
+		5EAF8E381C200D5E00A2D581 /* DGElasticPullToRefreshLoadingViewCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshLoadingViewCircle.swift; sourceTree = "<group>"; };
+		5EAF8E391C200D5E00A2D581 /* DGElasticPullToRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGElasticPullToRefreshView.swift; sourceTree = "<group>"; };
+		5EAF8E3F1C2010C000A2D581 /* RefreshViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
 		5EBF64871BF486870023BE73 /* CoreDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		5ECBF14B1BEAECCB00A8EFEA /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
 		5ECBF14F1BEB06A600A8EFEA /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 				5E168E4F1BE9A69B00A8502E /* Zoo_CoreDataTests */,
 				5E168E5A1BE9A69B00A8502E /* Zoo_CoreDataUITests */,
 				5E168E361BE9A69A00A8502E /* Products */,
+				5EAF8E341C200CE400A2D581 /* RefreshController */,
 				5E168E8C1BE9AF6600A8502E /* WeChatSDK */,
 				5EE43BD11BFDC05D00A3E6F7 /* TalkingData */,
 			);
@@ -467,6 +480,19 @@
 				5E7FADEA1C16915700D40A83 /* WebImage.h */,
 			);
 			path = WebImage;
+			sourceTree = "<group>";
+		};
+		5EAF8E341C200CE400A2D581 /* RefreshController */ = {
+			isa = PBXGroup;
+			children = (
+				5EAF8E351C200D5E00A2D581 /* DGElasticPullToRefreshConstants.swift */,
+				5EAF8E361C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift */,
+				5EAF8E371C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift */,
+				5EAF8E381C200D5E00A2D581 /* DGElasticPullToRefreshLoadingViewCircle.swift */,
+				5EAF8E391C200D5E00A2D581 /* DGElasticPullToRefreshView.swift */,
+				5EAF8E3F1C2010C000A2D581 /* RefreshViewController.swift */,
+			);
+			name = RefreshController;
 			sourceTree = "<group>";
 		};
 		5ECBF14A1BEAEC5400A8EFEA /* support */ = {
@@ -667,22 +693,28 @@
 				5E168E741BE9AA2400A8502E /* ShareViewController.swift in Sources */,
 				5ECBF1521BEB4A0C00A8EFEA /* SettingCellClass.swift in Sources */,
 				5E7FADF11C16915700D40A83 /* SDWebImageDownloaderOperation.m in Sources */,
+				5EAF8E3A1C200D5E00A2D581 /* DGElasticPullToRefreshConstants.swift in Sources */,
 				5E168EDD1BE9F23700A8502E /* Entity+CoreDataProperties.swift in Sources */,
 				5E7FADED1C16915700D40A83 /* SDImageCache.m in Sources */,
 				5E168EDE1BE9F23700A8502E /* Entity.swift in Sources */,
 				5ECBF1501BEB06A600A8EFEA /* SettingViewController.swift in Sources */,
+				5EAF8E3D1C200D5E00A2D581 /* DGElasticPullToRefreshLoadingViewCircle.swift in Sources */,
 				5E168E391BE9A69A00A8502E /* AppDelegate.swift in Sources */,
 				5E7FADEE1C16915700D40A83 /* SDWebImageCompat.m in Sources */,
 				5E7FADEC1C16915700D40A83 /* NSData+ImageContentType.m in Sources */,
 				5E168E771BE9AA2400A8502E /* SyViewController.swift in Sources */,
 				5E7FADF21C16915700D40A83 /* SDWebImageManager.m in Sources */,
 				5E7FADF01C16915700D40A83 /* SDWebImageDownloader.m in Sources */,
+				5EAF8E3E1C200D5E00A2D581 /* DGElasticPullToRefreshView.swift in Sources */,
 				5E7FADF91C16915700D40A83 /* UIImageView+WebCache.m in Sources */,
 				5E7FADF81C16915700D40A83 /* UIImageView+HighlightedWebCache.m in Sources */,
 				5E7FADEB1C16915700D40A83 /* MKAnnotationView+WebCache.m in Sources */,
 				5E7FADF51C16915700D40A83 /* UIImage+GIF.m in Sources */,
+				5EAF8E401C2010C000A2D581 /* RefreshViewController.swift in Sources */,
 				5ECBF1541BEC406400A8EFEA /* LikeViewController.swift in Sources */,
+				5EAF8E3B1C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				5E7FADF31C16915700D40A83 /* SDWebImagePrefetcher.m in Sources */,
+				5EAF8E3C1C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				5E7FADF41C16915700D40A83 /* UIButton+WebCache.m in Sources */,
 				5E7FADF61C16915700D40A83 /* UIImage+MultiFormat.m in Sources */,
 				5E7FADEF1C16915700D40A83 /* SDWebImageDecoder.m in Sources */,

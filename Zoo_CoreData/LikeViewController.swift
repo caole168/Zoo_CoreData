@@ -109,6 +109,8 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         tableView.rowHeight = 100
+        
+          tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     
         let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         

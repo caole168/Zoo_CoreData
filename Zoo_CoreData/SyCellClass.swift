@@ -26,11 +26,20 @@ class SyTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
- //       let ScreenWidth = Screen.width
+        let ScreenWidth = Screen.width
         
         syContentTitle.numberOfLines = 3
         syContentTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
         syContentTitle.textAlignment = NSTextAlignment.Justified
+     //   syContentTitle.textColor = UIColor(red: 63/255, green: 52/255, blue: 4/255, alpha: 1.0)
+        
+        
+        let separatorLine = UIImageView()
+        separatorLine.frame = CGRectMake(10, 101, ScreenWidth, 0.5)
+        separatorLine.image = UIImage(named: "separatorLine")
+        self.addSubview(separatorLine)
+        
+    
         
         
         

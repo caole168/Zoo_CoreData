@@ -43,7 +43,8 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         
      //   self.view.backgroundColor = UIColor.whiteColor()
         
-        
+    
+              
 //      浏览器加载页面
         loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
         

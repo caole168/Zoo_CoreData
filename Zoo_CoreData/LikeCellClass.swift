@@ -36,6 +36,11 @@ class LikeTableViewCell: UITableViewCell {
         syContentTitle.textAlignment = NSTextAlignment.Justified
         
         
+        let separatorLine = UIImageView()
+        separatorLine.frame = CGRectMake(10, 101, ScreenWidth, 0.5)
+        separatorLine.image = UIImage(named: "separatorLine")
+        self.addSubview(separatorLine)
+
         
         //屏幕尺寸判断
         
