@@ -20,10 +20,12 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     var receiveSource:NSString!
     var likeButtonTag:NSInteger?
     
+    
     var loadUrl:NSString!
     var pageTitle:NSString!
     let screen = UIScreen.mainScreen().bounds
     var loadImage = UIActivityIndicatorView()
+    
     
     //获取管理的数据上下文 对象
     let appDel = UIApplication.sharedApplication().delegate as! AppDelegate //获取appdel
@@ -33,6 +35,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var WebView: UIWebView!
     @IBOutlet weak var likeButton: UIButton!
+    let loadFail = UIButton()
     
     
 
@@ -40,35 +43,8 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-     //   self.view.backgroundColor = UIColor.whiteColor()
-        
     
-              
-//      浏览器加载页面
-        loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
-        
-        var httpUrl:String?
-        
-        if loadUrl.length >= 4{
-            httpUrl = loadUrl.substringToIndex(4)
-            
-        }else{
-            httpUrl = loadUrl as String
-        }
-     
-        WebView.reload()
-        WebView.reloadInputViews()
-        
-        if httpUrl == "http"{
-        WebView.loadRequest(NSURLRequest(URL:NSURL(string: "\(loadUrl)")! ) )
-        
-        }else{
-            WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://"+"\(loadUrl)")! ) )
-                    }
-         WebView.delegate = self
-
-        
+    
 //      查询收藏数据库中有没有收藏过该条内容，收藏过显示like_fill
         context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let fetchRequest:NSFetchRequest = NSFetchRequest(entityName: "Entity")
@@ -95,6 +71,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         }
         
   
+        load()
         
         // Do any additional setup after loading the view.
     }
@@ -102,6 +79,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         TalkingData.trackPageBegin("XiangQing")
+      
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -111,14 +89,10 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
 
     func webViewDidStartLoad(webView: UIWebView){
-        //    print("_____________________")
-        let Screen = UIScreen.mainScreen().bounds
-        let ScreenWidth = Screen.width
-        let ScreenHeight = Screen.height
+       
+    
         
-        
-        
-        loadImage.frame = CGRectMake(ScreenWidth/2.3, ScreenHeight/2.4, 50, 50)
+        loadImage.frame = CGRectMake(screen.width/2.3, screen.height/2.4, 50, 50)
         loadImage.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         self.view.addSubview(loadImage)
         loadImage.startAnimating()
@@ -139,6 +113,19 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     func webView(webView: UIWebView, didFailLoadWithError error: NSError?){
         
+        //webview加载失败
+        
+        loadImage.stopAnimating()
+        loadImage.hidesWhenStopped = true
+        
+        loadFail.hidden = false
+        loadFail.setTitle("点击重新加载", forState:.Normal )
+        loadFail.frame = CGRectMake(screen.width/3.3, screen.height/3.5, 150, 150)
+        loadFail.addTarget(self, action: "reload", forControlEvents: UIControlEvents.TouchUpInside)
+        loadFail.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        self.view.addSubview(loadFail)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -147,13 +134,50 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     }
     
     
+    func reload() {
+        
+        load()
+        loadFail.hidden = true
 
+        }
+    
+    
+    
+    func load(){
+        
+        
+        loadUrl = receiveUrl.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        
+        var compareUrl:String?
+        
+        //取链接前4个字母做对比
+        if loadUrl.length >= 4{
+            compareUrl = loadUrl.substringToIndex(4)
+            
+        }else{
+            compareUrl = loadUrl as String
+        }
+        
+        //如果链接里有http则直接加载链接，如果没有链接则客户端将http补上
+        if compareUrl == "http"{
+            WebView.loadRequest(NSURLRequest(URL:NSURL(string: "\(loadUrl)")! ) )
+            
+        }else{
+            WebView.loadRequest(NSURLRequest(URL:NSURL(string: "http://"+"\(loadUrl)")! ) )
+        }
+        
+        WebView.delegate = self
+        WebView.reload()
+
+    }
+    
     
     //分享按钮action
     @IBAction func shareButton(sender: AnyObject) {
         
         print("kolk")
         let shareImageData:NSData = NSData(contentsOfURL:NSURL(string: receiveImage)! )!
+        
     
         
         let ShareController = UIAlertController(title: "分享到", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)

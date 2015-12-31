@@ -27,7 +27,7 @@ func sendText(type:Int32 , shareTitle:NSString , shareUrl:NSString , shareImage:
     
     
     //分享描述
-    message.description = "欢迎关注微信公众号：it_zoo!"
+    message.description = "来自香蕉新闻客户端"
     message.mediaObject = url
     message.thumbData = shareImage
  

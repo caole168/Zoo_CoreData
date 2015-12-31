@@ -18,6 +18,9 @@
 #import "WXApi.h"
 
 
+#import "Reachability.h"
+
+
 
 
 #import "TalkingData.h"

@@ -14,15 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate{
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-         WXApi.registerApp("wx5e0be8387470d1b0")//微信分享注册
         
+        // Override point for customization after application launch.
+        WXApi.registerApp("wx5e0be8387470d1b0")//微信分享注册
         TalkingData.sessionStarted("7E695F4B322729E84EE32B92CF92F780", withChannelId: "")//talkingData注册
+        
+        
         
         return true
     }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -110,6 +112,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate{
             }
         }
     }
+    
+    
+    
 
 }
 

@@ -42,7 +42,7 @@ class SyViewController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
         backButton.title = ""
@@ -50,35 +50,28 @@ class SyViewController: UITableViewController{
         
         
         let navTitle = UILabel()
-        navTitle.frame = CGRectMake(100, 00, 100, 44)
-        navTitle.textColor = UIColor(red: 63/250, green: 52/250, blue: 4/250, alpha: 1.0)
-        navTitle.font = UIFont(name: "GurmukhiMN", size: 19)
+        navTitle.frame = CGRectMake(100, 100, 100, 44)
+        navTitle.textColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
+        navTitle.font = UIFont(name: "宋体", size: 26)
         navTitle.text = "香蕉新闻"
         navTitle.textAlignment = NSTextAlignment.Center
-        self.navigationItem.titleView = navTitle
+    
+
+        let navigationBarTitle = UIImageView()
+        navigationBarTitle.frame = CGRectMake(0, 0, 86, 18.5)
+        navigationBarTitle.image = UIImage(named: "xiangjiao")
+        self.navigationItem.titleView = navigationBarTitle
         
-        
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/255.0, green: 232/255.0, blue: 92/255.0, alpha: 1.0)
-        
+        pullRefresh()
 
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-//        // 初始下拉刷新控件
-//        pullRefreshControl.attributedTitle = NSAttributedString(string: "下拉加载新内容")
-//        pullRefreshControl.tintColor = UIColor.grayColor()
-//        pullRefreshControl.addTarget(self, action: "pullRefresh", forControlEvents: .ValueChanged)
-//        self.tableView.addSubview(pullRefreshControl)
-        
-        
+        if data.count != 0{
         //初始上拉加载更多
         let tableFooterView:UIView = UIView()
         tableFooterView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 36)
 //        tableFooterView.backgroundColor = UIColor.greenColor()
         self.tableView.tableFooterView = tableFooterView
         
-    
         // 加载更多的按扭
         loadMoreBtn.frame = CGRectMake(0, 0, self.view.bounds.width, 36)
         loadMoreBtn.setTitle("上拉加载更多", forState: .Normal)
@@ -93,7 +86,8 @@ class SyViewController: UITableViewController{
         tableFooterView.addSubview(juhua)
 
     
-        pullRefresh()
+        }
+        
         
 
     }
@@ -102,13 +96,6 @@ class SyViewController: UITableViewController{
     //初始化下拉刷新控件
     override func loadView() {
         super.loadView()
-        
-        
-
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-     
         
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         
@@ -120,14 +107,14 @@ class SyViewController: UITableViewController{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
                 
                 self?.tableView.dg_stopLoading()
-                self!.data = getHttp()
+                self?.data = getHttp()
                 self?.tableView.reloadData()
                 
             })
             }, loadingView: loadingView)
         
         //下拉颜色
-        tableView.dg_setPullToRefreshFillColor(UIColor(red: 255/255.0, green: 232/255.0, blue: 92/255.0, alpha: 1.0))
+        tableView.dg_setPullToRefreshFillColor(UIColor(red: 255/255.0, green: 213/255.0, blue: 2/255.0, alpha: 1.0))
         
         
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
@@ -142,6 +129,13 @@ class SyViewController: UITableViewController{
     
     override func viewWillAppear(animated: Bool) {
         TalkingData.trackPageBegin("ShouYe")
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/255.0, green: 213/255.0, blue: 2/255.0, alpha: 1.0)
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -164,9 +158,7 @@ class SyViewController: UITableViewController{
         
     }
     
-    
-    
-    
+      
      override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let tableCell : SyTableViewCell = tableView.dequeueReusableCellWithIdentifier("SyCell", forIndexPath: indexPath) as! SyTableViewCell
@@ -194,20 +186,14 @@ class SyViewController: UITableViewController{
         tableCell.syContentSource.text = dataGroup["source"] as? String
         
         tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)" ))
-        
-//
-//        print("_______________________________________")
-//        print(self.tableView.contentOffset)
-//
-//        print(self.tableView.contentSize)
+
         
         let frameDistance = self.tableView.contentSize.height - self.tableView.contentOffset.y
 
         let pullUpDistance = self.tableView.frame.height - frameDistance
         
-//        print(pullUpDistance)
         
-        //当页面华东到底部时且下个页面有数据自动加载
+        //当页面滑动到底部时且下个页面有数据自动加载
         if pullUpDistance > 45 && loadMoreState == true {
             loadMore()
             
@@ -262,35 +248,6 @@ class SyViewController: UITableViewController{
     }
     
 
-    //下拉刷新
-//    func pullRefresh() {
-//       
-//            if self.pullRefreshControl.refreshing == true {
-//    
-//            self.pullRefreshControl.attributedTitle = NSAttributedString(string: "正在加载...")
-//                     }
-//        
-//            dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
-//                 self.getHttp()
-//            
-//          
-//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                
-//                                 sleep(0)
-//            
-//            self.pullRefreshControl.endRefreshing()
-//            self.tableView.reloadData()
-//                
-//                self.loadMoreState = true
-//                
-//                
-//                })
-//                     })
-//        
-    
-        
-//             }
-    
     //上拉加载更多
     func loadMore() {
         
@@ -359,8 +316,8 @@ class SyViewController: UITableViewController{
         
         data = getHttp()
         self.tableView.reloadData()
-        
-    }
+        }
+    
     
     
     
