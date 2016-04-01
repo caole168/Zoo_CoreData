@@ -5,7 +5,7 @@
 //  Created by Ifeng on 15/9/3.
 //  Copyright (c) 2015年 pincher. All rights reserved.
 //
-
+//  标题“香蕉新闻”色值：74.64.66
 
 import UIKit
 
@@ -49,18 +49,27 @@ class SyViewController: UITableViewController{
         self.navigationItem.backBarButtonItem = backButton
         
         
-        let navTitle = UILabel()
-        navTitle.frame = CGRectMake(100, 100, 100, 44)
-        navTitle.textColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
-        navTitle.font = UIFont(name: "宋体", size: 26)
-        navTitle.text = "香蕉新闻"
-        navTitle.textAlignment = NSTextAlignment.Center
-    
+//        let navTitle = UILabel()
+//        navTitle.frame = CGRectMake(100, 100, 100, 44)
+//        navTitle.textColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
+//        navTitle.textAlignment = NSTextAlignment.Center
+//    
 
+        //"香蕉新闻"在不同尺寸的图
         let navigationBarTitle = UIImageView()
-        navigationBarTitle.frame = CGRectMake(0, 0, 86, 18.5)
         navigationBarTitle.image = UIImage(named: "xiangjiao")
         self.navigationItem.titleView = navigationBarTitle
+        if Screen.width == 320.0{
+            navigationBarTitle.frame = CGRectMake(0, 0, 73.5, 15.8)
+        }
+        if Screen.width == 375.0{
+            navigationBarTitle.frame = CGRectMake(0, 0, 86, 18.5)
+        }
+        if Screen.width == 414.0{
+            navigationBarTitle.frame = CGRectMake(0, 0, 94.9, 20.4)
+        }
+       
+        
         
         pullRefresh()
 
@@ -113,8 +122,8 @@ class SyViewController: UITableViewController{
             })
             }, loadingView: loadingView)
         
-        //下拉颜色
-        tableView.dg_setPullToRefreshFillColor(UIColor(red: 255/255.0, green: 213/255.0, blue: 2/255.0, alpha: 1.0))
+        //下拉刷新（原色 200，213，2）
+        tableView.dg_setPullToRefreshFillColor(UIColor(red: 254/255.0, green: 202/255.0, blue: 90/255.0, alpha: 1.0))
         
         
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
@@ -130,7 +139,8 @@ class SyViewController: UITableViewController{
     override func viewWillAppear(animated: Bool) {
         TalkingData.trackPageBegin("ShouYe")
         
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/255.0, green: 213/255.0, blue: 2/255.0, alpha: 1.0)
+        //顶部导航原色（244，213，2）
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 254/255.0, green: 202/255.0, blue: 90/255.0, alpha: 1.0)
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -163,15 +173,9 @@ class SyViewController: UITableViewController{
         
         let tableCell : SyTableViewCell = tableView.dequeueReusableCellWithIdentifier("SyCell", forIndexPath: indexPath) as! SyTableViewCell
         
-  //      tableCell.backgroundColor = UIColor.yellowColor()
-   
-        
         tableView.rowHeight = 102
               
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
-        //加载数据
-//        let dataGroup = data["\(dataRow)"] as! NSDictionary
         
         let dataGroup = data[indexPath.row] as! NSDictionary
         

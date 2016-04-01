@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E1116A81C3527260081140D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1116A71C3527260081140D /* Reachability.m */; };
 		5E168E391BE9A69A00A8502E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E381BE9A69A00A8502E /* AppDelegate.swift */; };
 		5E168E411BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E168E3F1BE9A69A00A8502E /* Zoo_CoreData.xcdatamodeld */; };
 		5E168E431BE9A69A00A8502E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E168E421BE9A69A00A8502E /* Assets.xcassets */; };
@@ -65,6 +64,7 @@
 		5EE43BD31BFDC12800A3E6F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD21BFDC12800A3E6F7 /* Security.framework */; };
 		5EE43BD51BFDC13500A3E6F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */; };
 		5EE43BD71BFDC14D00A3E6F7 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */; };
+		B37B4F0C1C859AEE0016E3CB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B37B4F0B1C859AEE0016E3CB /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +85,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5E1116A61C3527260081140D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../../Downloads/Reachability/Reachability.h; sourceTree = "<group>"; };
-		5E1116A71C3527260081140D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../../Downloads/Reachability/Reachability.m; sourceTree = "<group>"; };
 		5E168E351BE9A69A00A8502E /* Zoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E168E381BE9A69A00A8502E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E168E401BE9A69A00A8502E /* Zoo_CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zoo_CoreData.xcdatamodel; sourceTree = "<group>"; };
@@ -172,6 +170,8 @@
 		5EE43BD21BFDC12800A3E6F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5EE43BD41BFDC13500A3E6F7 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5EE43BD61BFDC14D00A3E6F7 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B37B4F0A1C859AEE0016E3CB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B37B4F0B1C859AEE0016E3CB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,8 +216,8 @@
 		5E1116A51C3527080081140D /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				5E1116A61C3527260081140D /* Reachability.h */,
-				5E1116A71C3527260081140D /* Reachability.m */,
+				B37B4F0A1C859AEE0016E3CB /* Reachability.h */,
+				B37B4F0B1C859AEE0016E3CB /* Reachability.m */,
 			);
 			name = Reachability;
 			sourceTree = "<group>";
@@ -494,7 +494,6 @@
 				TargetAttributes = {
 					5E168E341BE9A69A00A8502E = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = XWP5J634VP;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -600,7 +599,7 @@
 				5EAF8E3B1C200D5E00A2D581 /* DGElasticPullToRefreshExtensions.swift in Sources */,
 				5EAF8E3C1C200D5E00A2D581 /* DGElasticPullToRefreshLoadingView.swift in Sources */,
 				5EB787361C2A6F590011F7D0 /* UIButton+WebCache.m in Sources */,
-				5E1116A81C3527260081140D /* Reachability.m in Sources */,
+				B37B4F0C1C859AEE0016E3CB /* Reachability.m in Sources */,
 				5E168E751BE9AA2400A8502E /* SyCellClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zoo_CoreData/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -749,6 +749,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = OCBridgeHeader.h;
 			};
 			name = Debug;
@@ -758,6 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Zoo_CoreData/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -772,6 +774,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "Zoo-CoreData";
 				PRODUCT_NAME = Zoo;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = OCBridgeHeader.h;
 			};
 			name = Release;

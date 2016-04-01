@@ -79,7 +79,11 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     
     override func viewWillAppear(animated: Bool) {
         TalkingData.trackPageBegin("XiangQing")
-      
+        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        
+        navigationController?.navigationBar.shadowImage = UIImage(named: "separatorLine")
+       
+
     }
     
     override func viewWillDisappear(animated: Bool) {

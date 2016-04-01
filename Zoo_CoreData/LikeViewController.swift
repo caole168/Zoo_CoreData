@@ -114,7 +114,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
     
         let tableCell : LikeTableViewCell = tableView.dequeueReusableCellWithIdentifier("likeCell", forIndexPath: indexPath) as! LikeTableViewCell
         
-        let imageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as? String
+      //  let imageUrl = dataArrayReverse[indexPath.row].valueForKey("image") as? String
         
         tableCell.syContentTitle.text = dataArrayReverse[indexPath.row].valueForKey("title") as? String
         tableCell.syContentSource.text = dataArrayReverse[indexPath.row].valueForKey("source") as? String
@@ -122,11 +122,8 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         tableCell.syContentTime.text = dataArrayReverse[indexPath.row].valueForKey("time") as? String
 
       
-        tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)"))
-
+   //     tableCell.syContentImage.sd_setImageWithURL(NSURL(string: "\(imageUrl)" ))
         
-        print("=======================")
-        print(tableCell.syContentImage)
         return tableCell
         
     }
@@ -143,7 +140,7 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         
         vc.receiveUrl = dataArrayReverse[indexPath.row].valueForKey("url") as? String
         vc.receiveTitle = dataArrayReverse[indexPath.row].valueForKey("title") as? String
-        vc.receiveImage = dataArrayReverse[indexPath.row].valueForKey("image") as? String
+    //    vc.receiveImage = dataArrayReverse[indexPath.row].valueForKey("image") as? String
         vc.receiveSource = dataArrayReverse[indexPath.row].valueForKey("source") as? String
         vc.likeButtonTag = 1
 
@@ -173,12 +170,14 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
         if editingStyle == .Delete{
             context.deleteObject(dataArray[indexPath.row] as! NSManagedObject )
             appDel.saveContext()
-
             refreshData()
         }
         
     }
-
+    //左滑出现的文字
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
+    }
     
     
     

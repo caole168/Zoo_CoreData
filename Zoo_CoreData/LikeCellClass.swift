@@ -47,9 +47,9 @@ class LikeTableViewCell: UITableViewCell {
         
         if Screen.width == 320.0{
             
-  
+  //
             syContentImage.frame = CGRectMake(180,9,120,81) //  iphone 5  1.17
-            syContentTitle.frame = CGRectMake(10,10, 160,46)
+            syContentTitle.frame = CGRectMake(10,10, 300,46)
             syContentTime.frame  = CGRectMake(100, 77, 100, 20)
             syContentSource.frame = CGRectMake(10, 77, 80, 20)
    
@@ -71,8 +71,8 @@ class LikeTableViewCell: UITableViewCell {
         if Screen.width == 375.0{
             
             
-            syContentImage.frame = CGRectMake(246,9,120,81) //  iphone 6  375
-            syContentTitle.frame = CGRectMake(10,10, 220,46)
+          //  syContentImage.frame = CGRectMake(186,9,80,81) //  iphone 6  375
+            syContentTitle.frame = CGRectMake(10,10, 350,46)
             syContentTime.frame  = CGRectMake(100, 77, 100, 20)
             syContentSource.frame = CGRectMake(10, 77, 80, 20)
             
@@ -91,8 +91,8 @@ class LikeTableViewCell: UITableViewCell {
         
         
         if Screen.width == 414.0{
-            syContentImage.frame = CGRectMake(246,9,120,81) //  iphone 6plus
-            syContentTitle.frame = CGRectMake(10,10, 220,46)
+        //    syContentImage.frame = CGRectMake(246,9,120,81) //  iphone 6plus
+            syContentTitle.frame = CGRectMake(10,10, 400,46)
             syContentTime.frame  = CGRectMake(100, 77, 100, 20)
             syContentSource.frame = CGRectMake(10, 77, 80, 20)
             
@@ -110,7 +110,7 @@ class LikeTableViewCell: UITableViewCell {
         
         
         self.addSubview(syContentTitle)
-        self.addSubview(syContentImage)
+    //    self.addSubview(syContentImage)
         self.addSubview(syContentTime)
         self.addSubview(syContentSource)
         

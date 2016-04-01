@@ -24,6 +24,8 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
         backButton.title = ""
+        backButton.tintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
         self.navigationItem.backBarButtonItem = backButton
         
         
