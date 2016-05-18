@@ -50,11 +50,11 @@ class LikeViewController: UITableViewController,NSFetchedResultsControllerDelega
             
             
         }
-        //去掉返回按钮文字
-        let backButton = UIBarButtonItem()
-        backButton.image = UIImage(named: "")
-        backButton.title = ""
-        self.navigationItem.backBarButtonItem = backButton
+        
+        
+
+        
+
         
     }
         

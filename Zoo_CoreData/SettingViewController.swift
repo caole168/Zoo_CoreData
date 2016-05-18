@@ -20,14 +20,14 @@ class SettingViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         
         
-        //去掉返回按钮文字
-        let backButton = UIBarButtonItem()
-        backButton.image = UIImage(named: "")
-        backButton.title = ""
-        backButton.tintColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
-        self.navigationItem.backBarButtonItem = backButton
-        
+//        //去掉返回按钮文字
+//        let backButton = UIBarButtonItem()
+//        backButton.image = UIImage(named: "back")
+//        backButton.title = ""
+//        backButton.tintColor = UIColor.blackColor()
+//        self.navigationController?.navigationBar.tintColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
+//        self.navigationItem.backBarButtonItem = backButton
+//        
         
         //  -----------读取plist文件----------------
         plistData = NSBundle.mainBundle().pathForResource("setting", ofType: "plist")!

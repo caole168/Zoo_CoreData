@@ -5,7 +5,7 @@
 //  Created by Ifeng on 15/9/3.
 //  Copyright (c) 2015年 pincher. All rights reserved.
 //
-//  标题“香蕉新闻”色值：74.64.66
+//  标题“香蕉新闻”色值：74.64.66   #4a4042
 
 import UIKit
 
@@ -43,10 +43,14 @@ class SyViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        //去掉返回按钮文字
         let backButton = UIBarButtonItem()
         backButton.image = UIImage(named: "")
         backButton.title = ""
+        backButton.tintColor = UIColor.blackColor()
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 74/255, green: 64/255, blue: 66/255, alpha: 1.0)
         self.navigationItem.backBarButtonItem = backButton
+
         
         
 //        let navTitle = UILabel()
@@ -86,7 +90,7 @@ class SyViewController: UITableViewController{
         loadMoreBtn.setTitle("上拉加载更多", forState: .Normal)
         loadMoreBtn.titleLabel?.font = UIFont(name: "GurmukhiMN", size: 12)
         loadMoreBtn.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
-        loadMoreBtn.addTarget(self, action: "loadMore", forControlEvents: .TouchUpInside)
+        loadMoreBtn.addTarget(self, action: #selector(SyViewController.loadMore), forControlEvents: .TouchUpInside)
         tableFooterView.addSubview(loadMoreBtn)
         
         // 加载更多 状态 风火轮
@@ -145,6 +149,9 @@ class SyViewController: UITableViewController{
         navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         navigationController?.navigationBar.shadowImage = UIImage()
         tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        
+
 
     }
 
@@ -305,7 +312,7 @@ class SyViewController: UITableViewController{
                             })
                     })
             
-            pageNumber++    //翻页+1
+            pageNumber += 1    //翻页+1
             
         }
         

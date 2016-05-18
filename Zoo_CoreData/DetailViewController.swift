@@ -73,7 +73,8 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
   
         load()
         
-        // Do any additional setup after loading the view.
+        
+    // Do any additional setup after loading the view.
     }
 
     
@@ -125,7 +126,7 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
         loadFail.hidden = false
         loadFail.setTitle("点击重新加载", forState:.Normal )
         loadFail.frame = CGRectMake(screen.width/3.3, screen.height/3.5, 150, 150)
-        loadFail.addTarget(self, action: "reload", forControlEvents: UIControlEvents.TouchUpInside)
+        loadFail.addTarget(self, action: #selector(DetailViewController.reload), forControlEvents: UIControlEvents.TouchUpInside)
         loadFail.setTitleColor(UIColor.blackColor(), forState: .Normal)
         self.view.addSubview(loadFail)
         
@@ -179,10 +180,9 @@ class DetailViewController: UIViewController,UIWebViewDelegate {
     //分享按钮action
     @IBAction func shareButton(sender: AnyObject) {
         
-        print("kolk")
+     
         let shareImageData:NSData = NSData(contentsOfURL:NSURL(string: receiveImage)! )!
         
-    
         
         let ShareController = UIAlertController(title: "分享到", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         

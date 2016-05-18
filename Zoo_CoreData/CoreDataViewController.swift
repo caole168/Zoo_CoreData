@@ -29,7 +29,7 @@ func fetchCoreData(){
     //        fetchRequest.fetchLimit = 10 //限定查询结果的数量
     //        fetchRequest.fetchOffset = 0 //查询的偏移量
     
-    let sortDescrpitor:NSSortDescriptor = NSSortDescriptor(key: "title", ascending: true, selector: Selector("localizedStandardCompare:"))
+    let sortDescrpitor:NSSortDescriptor = NSSortDescriptor(key: "title", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
     
     
     let context = appDel.managedObjectContext
